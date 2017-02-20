@@ -17,7 +17,7 @@ Hero::Hero(std::string name, int health, int strength)
 	this->strength = strength;
 };
 
-void Hero::attack(Hero target)
+void Hero::attack(Hero &target)
 {
 	target.ouch(this->strength);
 };

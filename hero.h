@@ -11,7 +11,7 @@ class Hero
 		
 	public:
 		Hero(std::string, int, int);
-		void attack(Hero);
+		void attack(Hero&);
 		void ouch(int);
 		std::string getName();
 		int getStrength();
