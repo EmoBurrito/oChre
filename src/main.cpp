@@ -15,4 +15,5 @@ int main()
 	//todd.ouch(12); //TODO shouldn't need to do this, the attack should do it on it's own
 	std::cout << jeff.getName() << " has " << jeff.getHealth() << " remaining. Poor Jeff.\n";
 	std::cout << todd.getName() << " has " << todd.getHealth() << " remaining. Poor Tood.\n";
+	//std::cout << "Test of toString: " << *jeff
 }

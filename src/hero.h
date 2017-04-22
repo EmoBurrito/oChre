@@ -16,6 +16,7 @@ class Hero
 		std::string getName();
 		int getStrength();
 		int getHealth();
+		//operator std::string() const { return "Hi"; }
 };
 
 #endif

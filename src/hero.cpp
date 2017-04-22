@@ -32,6 +32,11 @@ std::string Hero::getName()
 	return name;
 };
 
+// std::ostream & operator<<(std::ostream & Str, Hero const & myHero) { 
+//   // print something from v to str, e.g: Str << v.getX();
+//   return Str;
+// }
+
 int Hero::getStrength()
 {
 	return this->strength;
