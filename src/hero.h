@@ -4,19 +4,29 @@
 
 class Hero
 {
-	private :
+	private:
 		std::string name;
 		int health;
 		int strength;
-		
+		std::string generateName(char sex='n');
+
+	protected:
+
 	public:
-		Hero(std::string, int, int);
-		void attack(Hero&);
-		void ouch(int);
+		//Default values go in function prototypes only
+		Hero(std::string, int, int); //Constructor - Bucky had a different constructor in 14
+		void attack(Hero&); //Attempts to attack a target
+		void ouch(int); //Takes damage
+
+		//Getters
 		std::string getName();
 		int getStrength();
 		int getHealth();
-		//operator std::string() const { return "Hi"; }
+
+		std::string sayCatchPhrase()
+		{
+			return "Preaching to the choir";
+		}
 };
 
-#endif
+#endif //HERO_H
