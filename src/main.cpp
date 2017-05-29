@@ -2,6 +2,8 @@
 #include <string>
 #include "party.h"
 #include "hero.h"
+#include "item.h"
+#include "equipable.h"
 
 using namespace std;
 
@@ -39,6 +41,10 @@ int main()
 	cout << jeff.getName() << " has " << jeff.getHealth() << " remaining. Poor Jeff.\n";
 	cout << todd.getName() << " has " << todd.getHealth() << " remaining. Poor Tood.\n";
 	//cout << "Test of toString: " << *jeff
+
+	//Messing around with items
+	Item mySword();
+	cout << "Hey, look! A " << mySword.getName();
 }
 
 void sizeCheck()
