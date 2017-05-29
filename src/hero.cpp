@@ -11,7 +11,11 @@
 using namespace std;
 
 //The constructor. A method automatically called when a new Hero is instantiated
-Hero::Hero(string name, int health, int strength)
+//Using some weird method of setting variables with the colon (Bucky E45)
+//This was good for so you didn't have to make a new one before passing it in, you could make it there (E47)
+Hero::Hero(string name, int healthParam, int strengthParam)
+: health(healthParam),
+strength(strengthParam)
 {
 	if (name=="")
 	{
@@ -22,19 +26,30 @@ Hero::Hero(string name, int health, int strength)
 		this->name = name;
 	}
 
-	this->health = health;
-	this->strength = strength;
+	// this->health = health;
+	// this->strength = strength;
 };
 
+/*!
+ *	\brief Hero destructor
+ *
+ *	C++ destructors take no parameters and have no return type. Not even void.
+ *	Cannot be overloaded.
+ */
+Hero::~Hero()
+{
+	cout << "Aww, " << this->name << " died\n";
+}
+
 //TODO & gets the address of, but "this" uses pointers... Consider reworking for consistency sake
-void Hero::attack(Hero &target)
+void Hero::attack(Hero *targetPointer)
 {
 	//Roll 0 or 1. If 1, hit. Else, miss (do nothing)
 	srand(time(0)); //Seeds the random generation with the current system time
 	if (rand()%2 == 1)
 	{
-		target.ouch(this->getStrength());
-		cout << this->getName() << " hit " << target.getName() << " for " << this->getStrength() << "\n";
+		targetPointer->ouch(this->getStrength());
+		cout << this->getName() << " hit " << targetPointer->getName() << " for " << this->getStrength() << "\n";
 	}
 };
 

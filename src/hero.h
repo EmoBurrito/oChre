@@ -14,9 +14,10 @@ class Hero
 
 	public:
 		//Default values go in function prototypes only
-		Hero(std::string="", int=10, int=10); //Constructor - Bucky had a different constructor in 14
-		void attack(Hero&); //Attempts to attack a target
-		void ouch(int); //Takes damage
+		Hero(std::string name="", int=10, int=10); //Constructor - Bucky had a different constructor in 14
+		~Hero();
+		void attack(Hero *targetPointer); //Attempts to attack a target. If we don't pass a pointer, it passes by value instead of reference
+		void ouch(int damageInflicted); //Takes damage
 
 		//Getters
 		std::string getName();
