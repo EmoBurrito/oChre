@@ -13,7 +13,15 @@ using namespace std;
 //The constructor. A method automatically called when a new Hero is instantiated
 Hero::Hero(string name, int health, int strength)
 {
-	this->name = name;
+	if (name=="")
+	{
+		this->name = Hero::generateName();
+	}
+	else
+	{
+		this->name = name;
+	}
+
 	this->health = health;
 	this->strength = strength;
 };
@@ -50,7 +58,7 @@ int Hero::getHealth()
 	return this->health;
 };
 
-string generateName(char sex)
+string Hero::generateName(char sex)
 {
 	string name;
 	srand(time(0));
@@ -82,7 +90,7 @@ string generateName(char sex)
 	}
 	else
 	{
-		switch (rand()%1) //Mod number of male names
+		switch (rand()%1)
 		{
 			case 0: name="Ora"; break;
 			default: name="Neutral";
@@ -90,20 +98,20 @@ string generateName(char sex)
 	}
 
 	//Append last name
-	switch (rand()%11) //Mod number of male names
+	switch (rand()%11)
 	{
-		case 0: name=" September"; break;
-		case 1: name=" Berger"; break;
-		case 2: name=" Trask"; break;
-		case 3: name=" Bosco"; break;
-		case 4: name=" Chaudhri"; break;
-		case 5: name=" Norris"; break;
-		case 6: name=" Sempers"; break;
-		case 7: name=" Altoviti"; break;
-		case 8: name=" Abbadelli"; break;
-		case 9: name=" Thomas"; break;
-		case 10: name=" Nelli"; break;
-		default: name=" Name";
+		case 0: name += " September"; break;
+		case 1: name += " Berger"; break;
+		case 2: name += " Trask"; break;
+		case 3: name += " Bosco"; break;
+		case 4: name += " Chaudhri"; break;
+		case 5: name += " Norris"; break;
+		case 6: name += " Sempers"; break;
+		case 7: name += " Altoviti"; break;
+		case 8: name += " Abbadelli"; break;
+		case 9: name += " Thomas"; break;
+		case 10: name += " Nelli"; break;
+		default: name += " Name";
 	}
 
 	return name;

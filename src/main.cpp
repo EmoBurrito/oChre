@@ -12,7 +12,7 @@ int main()
 	cout << "What shall be the champion's name?\n";
 	string heroName; //Declare the name variable
 	cin >> heroName; //Prompt user for name, which is then stored in the variable. Doesn't seem to take empty string?
-	//TODO Allow user to enter spaces
+	//TODO Allow user to enter spaces. Look into getLine()
 
 	//Make sure the user gave us a name. Doesn't seem to even take empty string, so this isn't necessary
 	// while (heroName.length() == 0) {
@@ -21,7 +21,7 @@ int main()
 	// }
 
 	Hero jeff(heroName, 15, 12); //Makes new hero with our input name
-	Hero todd("Todd", 12, 6); //Let's make someone to fight
+	Hero todd("", 12, 6); //Let's make someone to fight
 
 	cout << "Our hero's name is " << todd.getName() << " with " << todd.getHealth() << " health.\n";
 	cout << jeff.getName() << " doesn't like " << todd.getName() << "\n";
@@ -37,3 +37,5 @@ void someFunction()
 {
 	cout << "I'm a function! :D" << '\n';
 }
+
+//::tuna like super? E29

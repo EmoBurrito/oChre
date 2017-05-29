@@ -8,13 +8,13 @@ class Hero
 		std::string name;
 		int health;
 		int strength;
-		std::string generateName(char sex='n');
+		static std::string generateName(char sex='n');
 
 	protected:
 
 	public:
 		//Default values go in function prototypes only
-		Hero(std::string, int, int); //Constructor - Bucky had a different constructor in 14
+		Hero(std::string="", int=10, int=10); //Constructor - Bucky had a different constructor in 14
 		void attack(Hero&); //Attempts to attack a target
 		void ouch(int); //Takes damage
 
