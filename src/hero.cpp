@@ -1,6 +1,5 @@
-/**
-	Hero class, hero.cpp
-	Purpose: To server as the blueprint of a hero
+/*!
+	\class Hero
 */
 
 #include "hero.h"
