@@ -1,3 +1,9 @@
+/*!
+	\brief The "Hero" class
+
+	This class serves as the template for which all heroes are made from.
+ */
+
 #ifndef HERO_H
 #define HERO_H
 #include <string>
@@ -5,8 +11,10 @@
 class Hero
 {
 	private:
+		/// Here's my brief description
+		/** Followed by a detailed one. */
 		std::string name;
-		int health;
+		int health; /** Represents the health of the hero. */
 		int strength;
 		static std::string generateName(char sex='n');
 
