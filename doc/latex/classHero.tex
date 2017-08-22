@@ -12,14 +12,16 @@ The \char`\"{}\+Hero\char`\"{} class.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classHero_ad335448183a6875d08a5f51dea140e65}\label{classHero_ad335448183a6875d08a5f51dea140e65}} 
-{\bfseries Hero} (std\+::string, int, int)
+\mbox{\Hypertarget{classHero_a433f7b4e1663e5ac5fca2e13ed908301}\label{classHero_a433f7b4e1663e5ac5fca2e13ed908301}} 
+{\bfseries Hero} (std\+::string name=\char`\"{}\char`\"{}, int=10, int=10)
 \item 
-\mbox{\Hypertarget{classHero_aded4701b5cb1b065acfa9f898d4181ce}\label{classHero_aded4701b5cb1b065acfa9f898d4181ce}} 
-void {\bfseries attack} (\hyperlink{classHero}{Hero} \&)
+\hyperlink{classHero_a5aeef41ede5a80dc29c5acd7b553c4da}{$\sim$\+Hero} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classHero}{Hero} destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHero_a5667fd65b1f9c26370b99b7cb0d48be1}\label{classHero_a5667fd65b1f9c26370b99b7cb0d48be1}} 
+void {\bfseries attack} (\hyperlink{classHero}{Hero} $\ast$target\+Pointer)
 \item 
-\mbox{\Hypertarget{classHero_aea01a45fd8bc7a376ef50d671428891b}\label{classHero_aea01a45fd8bc7a376ef50d671428891b}} 
-void {\bfseries ouch} (int)
+\mbox{\Hypertarget{classHero_a57c8ff1f53e2f0d473ee3ad6e8e7800a}\label{classHero_a57c8ff1f53e2f0d473ee3ad6e8e7800a}} 
+void {\bfseries ouch} (int damage\+Inflicted)
 \item 
 \mbox{\Hypertarget{classHero_a4edbcb816ca444da6ceed1556d1a21d9}\label{classHero_a4edbcb816ca444da6ceed1556d1a21d9}} 
 std\+::string {\bfseries get\+Name} ()
@@ -39,6 +41,19 @@ std\+::string {\bfseries say\+Catch\+Phrase} ()
 The \char`\"{}\+Hero\char`\"{} class. 
 
 This class serves as the template for which all heroes are made from. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHero_a5aeef41ede5a80dc29c5acd7b553c4da}\label{classHero_a5aeef41ede5a80dc29c5acd7b553c4da}} 
+\index{Hero@{Hero}!````~Hero@{$\sim$\+Hero}}
+\index{````~Hero@{$\sim$\+Hero}!Hero@{Hero}}
+\subsubsection{\texorpdfstring{$\sim$\+Hero()}{~Hero()}}
+{\footnotesize\ttfamily Hero\+::$\sim$\+Hero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classHero}{Hero} destructor. 
+
+C++ destructors take no parameters and have no return type. Not even void. Cannot be overloaded. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

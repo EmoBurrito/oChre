@@ -1,5 +1,6 @@
-/*!
-	\class Hero
+/**
+	Hero class, hero.cpp
+	Purpose: To server as the blueprint of a hero
 */
 
 #include "hero.h"
@@ -12,10 +13,25 @@ using namespace std;
 //The constructor. A method automatically called when a new Hero is instantiated
 //Using some weird method of setting variables with the colon (Bucky E45)
 //This was good for so you didn't have to make a new one before passing it in, you could make it there (E47)
-Hero::Hero(string name, int healthParam, int strengthParam)
+Hero::Hero(string name,
+		   int healthParam,
+		   int manaParam,
+		   int accuracyParam,
+		   int strengthParam,
+		   int speedParam,
+		   int intellectParam,
+		   int wisdomParam,
+		   int luckParam)
 : health(healthParam),
-strength(strengthParam)
+  mana(manaParam),
+  strength(strengthParam),
+  accuracy(accuracyParam),
+  speed(speedParam),
+  intellect(intellectParam),
+  wisdom(wisdomParam),
+  luck(luckParam)
 {
+	//If a name wasn't provided, generate one
 	if (name=="")
 	{
 		this->name = Hero::generateName();
@@ -25,8 +41,12 @@ strength(strengthParam)
 		this->name = name;
 	}
 
-	// this->health = health;
-	// this->strength = strength;
+	//Not sure if necessary, begin them naked
+	//TODO These will have to be changed to pointers
+//	this->head = NULL;
+//	this->torso = NULL;
+//	this->lHand = NULL;
+//	this->rHand = NULL;
 };
 
 /*!
@@ -43,6 +63,7 @@ Hero::~Hero()
 //TODO & gets the address of, but "this" uses pointers... Consider reworking for consistency sake
 void Hero::attack(Hero *targetPointer)
 {
+	//TODO Change srand to C++11 random library
 	//Roll 0 or 1. If 1, hit. Else, miss (do nothing)
 	srand(time(0)); //Seeds the random generation with the current system time
 	if (rand()%2 == 1)

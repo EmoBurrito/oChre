@@ -1,28 +1,48 @@
-/*!
-	\brief The "Hero" class
-
-	This class serves as the template for which all heroes are made from.
- */
-
 #ifndef HERO_H
 #define HERO_H
 #include <string>
+#include "item.h"
 
 class Hero
 {
 	private:
-		/// Here's my brief description
-		/** Followed by a detailed one. */
 		std::string name;
-		int health; /** Represents the health of the hero. */
+		int health;
+		int mana;
+		int accuracy;
 		int strength;
+		int speed;
+		int intellect;
+		int wisdom;
+		int luck;
+
+		//Equipment
+		Head * head;
+		Torso * torso;
+		Hand * lHand;
+		Hand * rHand;
+		//Ring rings [20] = {}; //TODO Figure out initializing array to empty values
+		Legs * legs;
+		Feet * feet;
+
+		//Internal methods
 		static std::string generateName(char sex='n');
 
 	protected:
 
 	public:
 		//Default values go in function prototypes only
-		Hero(std::string name="", int=10, int=10); //Constructor - Bucky had a different constructor in 14
+		Hero(
+			std::string name="",
+			int=10,
+			int=10,
+			int=10,
+			int=10,
+			int=10,
+			int=10,
+			int=10,
+			int=10
+		); //Constructor - Bucky had a different constructor in 14
 		~Hero();
 		void attack(Hero *targetPointer); //Attempts to attack a target. If we don't pass a pointer, it passes by value instead of reference
 		void ouch(int damageInflicted); //Takes damage

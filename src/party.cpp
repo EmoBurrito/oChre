@@ -10,4 +10,3 @@ Party::Party()
 
 };
 
-}

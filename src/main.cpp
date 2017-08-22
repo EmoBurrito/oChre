@@ -1,22 +1,8 @@
-/*! \mainpage 
- *
- * \section intro_sec Introduction
- *
- * This is the introduction
- *
- * \section install_sec Installation
- *
- * \subsection step1 Step 1: Opening the box
- *
- * etc...
- */
-
 #include <iostream>
 #include <string>
 #include "party.h"
 #include "hero.h"
 #include "item.h"
-#include "equipable.h"
 
 using namespace std;
 
@@ -56,8 +42,8 @@ int main()
 	//cout << "Test of toString: " << *jeff
 
 	//Messing around with items
-	Item mySword();
-	cout << "Hey, look! A " << mySword.getName();
+	Hand myItem("sword");
+	cout << "Hey, look! A " << myItem.getName() << "\n";
 }
 
 void sizeCheck()

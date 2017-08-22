@@ -3,14 +3,29 @@
 */
 
 #include "item.h"
-#include "equipable.h"
-
-Item::Item(std::string nameParam)
-:name(nameParam)
-{
-};
 
 std::string Item::getName()
 {
-  return "sword";
+  return name;
+};
+
+///////////////
+// EQUIPABLE //
+///////////////
+Equipable::Equipable()
+{
+
+};
+
+Hand::Hand(std::string nameParam)
+{
+  this->name = nameParam;
+}
+
+////////////////
+// CONSUMABLE //
+////////////////
+Consumable::Consumable()
+{
+
 };
