@@ -62,6 +62,13 @@ Hero::~Hero()
 
 //TODO & gets the address of, but "this" uses pointers... Consider reworking for consistency sake
 void Hero::attack(Hero *targetPointer)
+/**
+ * This is a test brief.
+ *
+ * This is a test detailed description.
+ * It spans multiple lines.
+ * \dotfile attack.dot
+ */
 {
 	//TODO Change srand to C++11 random library
 	//Roll 0 or 1. If 1, hit. Else, miss (do nothing)

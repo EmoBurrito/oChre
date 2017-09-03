@@ -1,0 +1,8 @@
+// Guide: http://www.graphviz.org/pdf/dotguide.pdf
+// Shapes: http://www.graphviz.org/doc/info/shapes.html
+digraph G {
+	start [label="Start", shape=box, color=red, style=filled];
+	A [label="To be completed..."];
+	end [label="End", shape=box, color=green, style=filled];
+	start -> A -> end;
+}

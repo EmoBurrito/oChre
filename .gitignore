@@ -1,3 +1,8 @@
+# Added for oChre
+doc/html/
+doc/latex/
+.metadata
+
 # Compiled Object files
 *.slo
 *.lo
