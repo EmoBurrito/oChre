@@ -2,6 +2,9 @@
 doc/html/
 doc/latex/
 .metadata
+src/.idea
+src/cmake-build-debug
+src/CMakeLists.txt
 
 # Compiled Object files
 *.slo

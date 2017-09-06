@@ -14,6 +14,10 @@ class Party
 		/** What do for month? */
 		/** Do I care about leap years? Is this Earth? Do we even need the Gregorian calendar? */
 
+
+        //Party inventory
+        unsigned int purse[4]; //Four denominations, each worth 100 of the last. Gems, gold, silver, copper. Consider notes for large amounts.
+        unsigned int food; //Days worth of rations for the party. Consider float and having different races eat different amounts.
 		Hero members[6]; //Maximum six party members at a time //TODO Consider mallocing to save a hero or two
 		//C++ requires sizeOfs to be passed with array, just like C
 		//C++ also supports multi-dimensional arrays but I'd personally prefer nested ones. More memory efficient.
@@ -22,14 +26,17 @@ class Party
 
 	public:
 		Party();
+		void printInventory();
 
 		//Money
-		void moneyIncrease(unsigned int value);
-		bool moneyDecrease(unsigned int value);
+		bool moneyIncrease(unsigned int value[4]);
+		bool moneyDecrease(unsigned int value[4]);
+        unsigned int* getPurse(); //Returns an array of 4 unsigned ints
 
 		//Food
-		void foodIncrease(unsigned int value);
+		bool foodIncrease(unsigned int value);
 		bool foodDecrease(unsigned int value);
+        unsigned int getFood();
 
 		void rest(); //Heal the party, decrement food, pass time
 

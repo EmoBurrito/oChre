@@ -1,20 +1,17 @@
 CC=g++
-EXT=o
 PURGE=rm
 
 #The main bin
-program: item.o hero.$(EXT) main.$(EXT)
-	$(CC) -o oChre.exe obj/hero.$(EXT) obj/main.$(EXT) -lm
-main.o:
-	$(CC) -c src/main.cpp -o obj/main.o
+program: item hero main
+	$(CC) build/item.o build/hero.o build/main.o -o bin/oChre.exe -lm
+main:
+	$(CC) -c src/main.cpp -o build/main.o
 
 #Creatures
-hero.o:
-	$(CC) -c src/hero.cpp -o obj/hero.o
-
-#items
-item.o:
-	$(CC) -c src/item.cpp -o obj/item.o
-
+hero:
+	$(CC) -c src/hero.cpp -o build/hero.o
+#Items
+item:
+	$(CC) -c src/item.cpp -o build/item.o
 clean:
-	$(PURGE) obj/*.$(EXT) *.exe
+	$(PURGE) build/*.o bin/*.exe

@@ -77,6 +77,9 @@ void Hero::attack(Hero *targetPointer)
 	{
 		targetPointer->ouch(this->getStrength());
 		cout << this->getName() << " hit " << targetPointer->getName() << " for " << this->getStrength() << "\n";
+	} else
+	{
+		cout << this->getName() << " missed " << targetPointer->getName() << "!\n";
 	}
 };
 
@@ -116,6 +119,7 @@ string Hero::generateName(char sex)
 			case 3: name="Baz"; break;
 			case 4: name="Bedros"; break;
 			case 5: name="Corneille"; break;
+			case 6: name="Dennifer"; break;
 			default: name="Masculine";
 		}
 	}
