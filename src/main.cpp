@@ -62,6 +62,6 @@ void printParty()
 {
     // TODO Move this to Party
     cout << "===";
-    cout << "TIME | Money | Food";
+    cout << "TIME | Money | Food";  //TODO Replace time with an actual timestamp
     cout << "===";
 }

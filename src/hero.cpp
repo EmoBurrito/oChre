@@ -4,6 +4,7 @@
 */
 
 #include "hero.h"
+#include <vector>
 #include <iostream> //Used for I/O
 #include <cstdlib> //Used for random number generation
 #include <ctime> //Used to access system time, helps random generation
@@ -105,60 +106,125 @@ int Hero::getHealth()
 
 string Hero::generateName(char sex)
 {
-	string name;
-	srand(time(0));
+    /**
+     * Returns a string of a randomly generated name.
+     *
+     * Used if a name is not supplied.
+     */
+    srand(time(0));
+    std::string first;
+    std::string last;
+    if (rand()%2 == 0)
+    {
+        first = generateNameFirst(sex);
+        last = generateNameLast();
+    }
+    else
+    {
+        first = generateNameFirst();
+        last = generateNameCompound();
+    }
 
-	//TODO Force sex to lower case
-	if (sex == 'm')
-	{
-		switch (rand()%6) //Mod number of male names
-		{
-			case 0: name="Reggie"; break;
-			case 1: name="Harrison"; break;
-			case 2: name="Sal"; break;
-			case 3: name="Baz"; break;
-			case 4: name="Bedros"; break;
-			case 5: name="Corneille"; break;
-			case 6: name="Dennifer"; break;
-			default: name="Masculine";
-		}
-	}
-	else if (sex == 'f')
-	{
-		switch (rand()%4) //Mod number of female names
-		{
-			case 0: name="Nel"; break;
-			case 1: name="Abigayle"; break;
-			case 2: name="Anna"; break;
-			case 3: name="Ida"; break;
-			default: name="Femme";
-		}
-	}
-	else
-	{
-		switch (rand()%1)
-		{
-			case 0: name="Ora"; break;
-			default: name="Neutral";
-		}
-	}
+	return first + " " + last;
+}
 
-	//Append last name
-	switch (rand()%11)
-	{
-		case 0: name += " September"; break;
-		case 1: name += " Berger"; break;
-		case 2: name += " Trask"; break;
-		case 3: name += " Bosco"; break;
-		case 4: name += " Chaudhri"; break;
-		case 5: name += " Norris"; break;
-		case 6: name += " Sempers"; break;
-		case 7: name += " Altoviti"; break;
-		case 8: name += " Abbadelli"; break;
-		case 9: name += " Thomas"; break;
-		case 10: name += " Nelli"; break;
-		default: name += " Name";
-	}
+string Hero::generateNameFirst(char sex) {
+    /**
+     * generateName helper method. Generates first name.
+     *
+     * TODO: Separate based on race.
+     * TODO: Force sex to lower case.
+     */
+    if (sex == 'm')
+    {
+        std::vector<std::string> male_names = {
+                "Andrew",
+                "Alexander",
+                "Baz",
+                "Bedros",
+                "Corneille",
+                "Dennifer",
+                "Harrison",
+                "Reggie",
+                "Roderick",
+                "Sal",
+                "Zoltan"
+        };
 
-	return name;
+        return male_names[rand()%male_names.size()];
+    }
+    else if (sex == 'f')
+    {
+        std::vector<std::string> female_names = {
+                "Abigayle",
+                "Alexis",
+                "Anna",
+                "Andrea",
+                "Dove",
+                "Ida",
+                "Nel"
+        };
+
+        return female_names[rand()%female_names.size()];
+    }
+    else
+    {
+        std::vector<std::string> neutral_names = {
+                "Adrian",
+                "Ash",
+                "Aubrey",
+                "Ora"
+        };
+
+        return neutral_names[rand()%neutral_names.size()];
+    }
+}
+
+string Hero::generateNameLast() {
+    /**
+     * generateName helper method. Generates last name.
+     *
+     * TODO: Separate based on race.
+     */
+    std::vector<std::string> last_names = {
+            "Abbadelli",
+            "Altoviti",
+            "Berger",
+            "Bosco",
+            "Chaudhri",
+            "Nelli",
+            "Norris",
+            "Sempers",
+            "September",
+            "Thomas",
+            "Trask",
+    };
+    return last_names[rand()%last_names.size()];
+}
+
+string Hero::generateNameCompound() {
+    /**
+     * generateName helper method. Generates a compound last name.
+     */
+
+    std::vector<std::string> first = {
+        "Chicken",
+        "Light",
+        "Falcon",
+        "Finger",
+        "Hawk",
+        "Rock",
+        "Stone"
+    };
+    std::vector<std::string> second = {
+        "bringer",
+        "foot",
+        "fucker",
+        "hand",
+        "haver",
+        "holder",
+        "smasher"
+    };
+
+    return first[rand()%first.size()] + second[rand()%second.size()];
 }

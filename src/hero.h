@@ -27,6 +27,9 @@ class Hero
 
 		//Internal methods
 		static std::string generateName(char sex='n');
+		static std::string generateNameFirst(char sex='n');
+		static std::string generateNameLast();
+        static std::string generateNameCompound();
 
 	protected:
 
