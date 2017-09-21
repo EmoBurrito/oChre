@@ -112,8 +112,8 @@ string Hero::generateName(char sex)
      * Used if a name is not supplied.
      */
     srand(time(0));
-    std::string first;
-    std::string last;
+    string first;
+    string last;
     if (rand()%2 == 0)
     {
         first = generateNameFirst(sex);
@@ -130,53 +130,68 @@ string Hero::generateName(char sex)
 
 string Hero::generateNameFirst(char sex) {
     /**
-     * generateName helper method. Generates first name.
+     * generateName helper method. Generates first name. If you have contributed, feel free to add your name.
+     *
+     * The names are sorted first into genders, then into spellings of. This is to prevent multiple spellings of one
+     * name to become increasingly popular. For example, supposed we had Aubrey, Aubry, John, and Tom. This would mean
+     * that half of the given population would be named some form of Aubrey. By doing it this way, we are making it so
+     * that 1/3rd of the population is named Aubrey and then half of all Aubreys are spelled one way. while the other
+     * half are spelled the other.
+     *
+     * Spellings of names alphabetically, and then vectors are sorted alphabetically based on sub-vectors first bucket.
      *
      * TODO: Separate based on race.
      * TODO: Force sex to lower case.
      */
     if (sex == 'm')
     {
-        std::vector<std::string> male_names = {
-                "Andrew",
-                "Alexander",
-                "Baz",
-                "Bedros",
-                "Corneille",
-                "Dennifer",
-                "Harrison",
-                "Reggie",
-                "Roderick",
-                "Sal",
-                "Zoltan"
+        vector<vector<string>> male_names = {
+                vector<string> {"Adrian"},
+                vector<string> {"Andrew"},
+                vector<string> {"Alexander"},
+                vector<string> {"Baz"},
+                vector<string> {"Bedros"},
+                vector<string> {"Corneille"},
+                vector<string> {"Dennifer"},
+                vector<string> {"Harrison"},
+                vector<string> {"Reggie"},
+                vector<string> {"Roderick"},
+                vector<string> {"Sal"},
+                vector<string> {"Zoltan"}
         };
 
-        return male_names[rand()%male_names.size()];
+        //Get Sub-vector
+        vector<string> sub_vector = male_names[rand()%male_names.size()];
+        //Get name from sub-vector
+        return sub_vector[rand()%sub_vector.size()];
     }
     else if (sex == 'f')
     {
-        std::vector<std::string> female_names = {
-                "Abigayle",
-                "Alexis",
-                "Anna",
-                "Andrea",
-                "Dove",
-                "Ida",
-                "Nel"
+        vector<vector<string>> female_names = {
+                vector<string> {"Abigayle"},
+                vector<string> {"Adrianne"},
+                vector<string> {"Alexis"},
+                vector<string> {"Anna"},
+                vector<string> {"Andrea"},
+                vector<string> {"Dove"},
+                vector<string> {"Ida"},
+                vector<string> {"Nel"}
         };
 
-        return female_names[rand()%female_names.size()];
+        vector<string> sub_vector = female_names[rand()%female_names.size()];
+        return sub_vector[rand()%sub_vector.size()];
     }
     else
     {
-        std::vector<std::string> neutral_names = {
-                "Adrian",
-                "Ash",
-                "Aubrey",
-                "Ora"
+        vector<vector<string>> neutral_names = {
+                vector<string> {"Alberic"},
+                vector<string> {"Ash"},
+                vector<string> {"Aubrey", "Aubry"},
+                vector<string> {"Ora"}
         };
 
-        return neutral_names[rand()%neutral_names.size()];
+        vector<string> sub_vector = neutral_names[rand()%neutral_names.size()];
+        return sub_vector[rand()%sub_vector.size()];
     }
 }
 
@@ -186,20 +201,21 @@ string Hero::generateNameLast() {
      *
      * TODO: Separate based on race.
      */
-    std::vector<std::string> last_names = {
-            "Abbadelli",
-            "Altoviti",
-            "Berger",
-            "Bosco",
-            "Chaudhri",
-            "Nelli",
-            "Norris",
-            "Sempers",
-            "September",
-            "Thomas",
-            "Trask",
+    vector<vector<string>> last_names = {
+            vector<string> {"Abbadelli"},
+            vector<string> {"Altoviti"},
+            vector<string> {"Berger"},
+            vector<string> {"Bosco"},
+            vector<string> {"Chaudhri"},
+            vector<string> {"Nelli"},
+            vector<string> {"Norris"},
+            vector<string> {"Sempers"},
+            vector<string> {"September"},
+            vector<string> {"Thomas"},
+            vector<string> {"Trask"},
     };
-    return last_names[rand()%last_names.size()];
+    vector<string> sub_vector = last_names[rand()%last_names.size()];
+    return sub_vector[rand()%sub_vector.size()];
 }
 
 string Hero::generateNameCompound() {
@@ -207,24 +223,34 @@ string Hero::generateNameCompound() {
      * generateName helper method. Generates a compound last name.
      */
 
-    std::vector<std::string> first = {
-        "Chicken",
-        "Light",
-        "Falcon",
-        "Finger",
-        "Hawk",
-        "Rock",
-        "Stone"
+    vector<vector<string>> first = {
+        vector<string> {"Chicken"},
+        vector<string> {"Light"},
+        vector<string> {"Falcon"},
+        vector<string> {"Finger"},
+        vector<string> {"Hawk"},
+        vector<string> {"Mc"},
+        vector<string> {"Mac"},
+        vector<string> {"Nerf"},
+        vector<string> {"O'"},
+        vector<string> {"Pig"},
+        vector<string> {"Rock"},
+        vector<string> {"Stone"}
     };
-    std::vector<std::string> second = {
-        "bringer",
-        "foot",
-        "fucker",
-        "hand",
-        "haver",
-        "holder",
-        "smasher"
+    vector<vector<string>> second = {
+        vector<string> {"bringer"},
+        vector<string> {"fists"},
+        vector<string> {"foot"},
+        vector<string> {"fucker"},
+        vector<string> {"hand"},
+        vector<string> {"haver"},
+        vector<string> {"herder"},
+        vector<string> {"holder"},
+        vector<string> {"licker"},
+        vector<string> {"smasher"}
     };
 
-    return first[rand()%first.size()] + second[rand()%second.size()];
+    vector<string> sub_first = first[rand()%first.size()];
+    vector<string> sub_second = second[rand()%second.size()];
+    return sub_first[rand()%sub_first.size()] + sub_second[rand()%sub_second.size()];
 }
