@@ -1,21 +1,14 @@
 #ifndef HERO_H
 #define HERO_H
 #include <string>
+#include "hero.h"
 #include "item.h"
+#include "thing.h"
 
-class Hero
-{
+using namespace std;
+
+class Hero: public Thing {
 	private:
-		std::string name;
-		int health;
-		int mana;
-		int accuracy;
-		int strength;
-		int speed;
-		int intellect;
-		int wisdom;
-		int luck;
-
 		//Equipment
 		Head * head;
 		Torso * torso;

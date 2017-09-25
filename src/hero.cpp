@@ -15,23 +15,23 @@ using namespace std;
 //Using some weird method of setting variables with the colon (Bucky E45)
 //This was good for so you didn't have to make a new one before passing it in, you could make it there (E47)
 Hero::Hero(string name,
-		   int healthParam,
-		   int manaParam,
-		   int accuracyParam,
-		   int strengthParam,
-		   int speedParam,
-		   int intellectParam,
-		   int wisdomParam,
-		   int luckParam)
-: health(healthParam),
-  mana(manaParam),
-  strength(strengthParam),
-  accuracy(accuracyParam),
-  speed(speedParam),
-  intellect(intellectParam),
-  wisdom(wisdomParam),
-  luck(luckParam)
+		   int health,
+		   int mana,
+		   int accuracy,
+		   int strength,
+		   int speed,
+		   int intellect,
+		   int wisdom,
+		   int luck)
 {
+	this->health = health;
+	this->mana = mana;
+	this->accuracy = accuracy;
+	this->strength = strength;
+	this->speed = speed;
+	this->intellect = intellect;
+	this->wisdom = wisdom;
+	this->luck = luck;
 	//If a name wasn't provided, generate one
 	if (name=="")
 	{
@@ -58,7 +58,7 @@ Hero::Hero(string name,
  */
 Hero::~Hero()
 {
-	cout << "Aww, " << this->name << " died\n";
+	cout << "Aww, " << name << " died\n";
 }
 
 //TODO & gets the address of, but "this" uses pointers... Consider reworking for consistency sake
@@ -96,12 +96,12 @@ string Hero::getName()
 
 int Hero::getStrength()
 {
-	return this->strength;
+	return strength;
 };
 
 int Hero::getHealth()
 {
-	return this->health;
+	return health;
 };
 
 string Hero::generateName(char sex)
@@ -153,10 +153,12 @@ string Hero::generateNameFirst(char sex) {
                 vector<string> {"Bedros"},
                 vector<string> {"Corneille"},
                 vector<string> {"Dennifer"},
+		vector<string> {"Dick", "Richard"},
+		vector<string> {"Gil", "Gillian"},
                 vector<string> {"Harrison"},
                 vector<string> {"Reggie"},
                 vector<string> {"Roderick"},
-                vector<string> {"Sal"},
+                vector<string> {"Sal", "Salazar"},
                 vector<string> {"Zoltan"}
         };
 
@@ -175,6 +177,7 @@ string Hero::generateNameFirst(char sex) {
                 vector<string> {"Andrea"},
                 vector<string> {"Dove"},
                 vector<string> {"Ida"},
+		vector<string> {"Jill", "Jilian"},
                 vector<string> {"Nel"}
         };
 
