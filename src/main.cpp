@@ -2,7 +2,7 @@
 #include <string>
 #include "party.h"
 #include "hero.h"
-#include "item.h"
+#include "equippable.h"
 
 using namespace std;
 
@@ -54,6 +54,8 @@ void sizeCheck()
 	cout << "Memory sizes in bytes:\n";
 	cout << "Party: " << sizeof(Party) << "\n";
 	cout << "Hero: " << sizeof(Hero) << "\n";
+    //cout << "Consumable: " << sizeof(Consumable) << "\n";
+    cout << "Equippable: " << sizeof(Hand) << "\n";
 }
 
 //::tuna like super? E29

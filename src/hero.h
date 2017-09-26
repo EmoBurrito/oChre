@@ -1,9 +1,8 @@
 #ifndef HERO_H
 #define HERO_H
 #include <string>
-#include "hero.h"
-#include "item.h"
 #include "thing.h"
+#include "equippable.h"
 
 using namespace std;
 
@@ -19,17 +18,17 @@ class Hero: public Thing {
 		Feet * feet;
 
 		//Internal methods
-		static std::string generateName(char sex='n');
-		static std::string generateNameFirst(char sex='n');
-		static std::string generateNameLast();
-        static std::string generateNameCompound();
+		static string generateName(char sex='n');
+		static string generateNameFirst(char sex='n');
+		static string generateNameLast();
+        static string generateNameCompound();
 
 	protected:
 
 	public:
 		//Default values go in function prototypes only
 		Hero(
-			std::string name="",
+			string name="",
 			int=10,
 			int=10,
 			int=10,
@@ -44,7 +43,7 @@ class Hero: public Thing {
 		void ouch(int damageInflicted); //Takes damage
 
 		//Getters
-		std::string getName();
+		string getName();
 		int getStrength();
 		int getHealth();
 

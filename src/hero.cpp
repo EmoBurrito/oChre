@@ -146,20 +146,20 @@ string Hero::generateNameFirst(char sex) {
     if (sex == 'm')
     {
         vector<vector<string>> male_names = {
-                vector<string> {"Adrian"},
-                vector<string> {"Andrew"},
-                vector<string> {"Alexander"},
-                vector<string> {"Baz"},
-                vector<string> {"Bedros"},
-                vector<string> {"Corneille"},
-                vector<string> {"Dennifer"},
-		vector<string> {"Dick", "Richard"},
-		vector<string> {"Gil", "Gillian"},
-                vector<string> {"Harrison"},
-                vector<string> {"Reggie"},
-                vector<string> {"Roderick"},
-                vector<string> {"Sal", "Salazar"},
-                vector<string> {"Zoltan"}
+            vector<string> {"Adrian"},
+            vector<string> {"Andrew"},
+            vector<string> {"Alexander"},
+            vector<string> {"Baz"},
+            vector<string> {"Bedros"},
+            vector<string> {"Corneille"},
+            vector<string> {"Dennifer"},
+            vector<string> {"Dick", "Richard"},
+		    vector<string> {"Gil", "Gillian"},
+            vector<string> {"Harrison"},
+            vector<string> {"Reggie"},
+            vector<string> {"Roderick"},
+            vector<string> {"Sal", "Salazar"},
+            vector<string> {"Zoltan"}
         };
 
         //Get Sub-vector
@@ -170,15 +170,15 @@ string Hero::generateNameFirst(char sex) {
     else if (sex == 'f')
     {
         vector<vector<string>> female_names = {
-                vector<string> {"Abigayle"},
-                vector<string> {"Adrianne"},
-                vector<string> {"Alexis"},
-                vector<string> {"Anna"},
-                vector<string> {"Andrea"},
-                vector<string> {"Dove"},
-                vector<string> {"Ida"},
-		vector<string> {"Jill", "Jilian"},
-                vector<string> {"Nel"}
+            vector<string> {"Abigayle"},
+            vector<string> {"Adrianne"},
+            vector<string> {"Alexis"},
+            vector<string> {"Anna"},
+            vector<string> {"Andrea"},
+            vector<string> {"Dove"},
+            vector<string> {"Ida"},
+		    vector<string> {"Jill", "Jilian"},
+            vector<string> {"Nel"}
         };
 
         vector<string> sub_vector = female_names[rand()%female_names.size()];
@@ -187,10 +187,10 @@ string Hero::generateNameFirst(char sex) {
     else
     {
         vector<vector<string>> neutral_names = {
-                vector<string> {"Alberic"},
-                vector<string> {"Ash"},
-                vector<string> {"Aubrey", "Aubry"},
-                vector<string> {"Ora"}
+            vector<string> {"Alberic"},
+            vector<string> {"Ash"},
+            vector<string> {"Aubrey", "Aubry"},
+            vector<string> {"Ora"}
         };
 
         vector<string> sub_vector = neutral_names[rand()%neutral_names.size()];
@@ -205,17 +205,17 @@ string Hero::generateNameLast() {
      * TODO: Separate based on race.
      */
     vector<vector<string>> last_names = {
-            vector<string> {"Abbadelli"},
-            vector<string> {"Altoviti"},
-            vector<string> {"Berger"},
-            vector<string> {"Bosco"},
-            vector<string> {"Chaudhri"},
-            vector<string> {"Nelli"},
-            vector<string> {"Norris"},
-            vector<string> {"Sempers"},
-            vector<string> {"September"},
-            vector<string> {"Thomas"},
-            vector<string> {"Trask"},
+        vector<string> {"Abbadelli"},
+        vector<string> {"Altoviti"},
+        vector<string> {"Berger"},
+        vector<string> {"Bosco"},
+        vector<string> {"Chaudhri"},
+        vector<string> {"Nelli"},
+        vector<string> {"Norris"},
+        vector<string> {"Sempers"},
+        vector<string> {"September"},
+        vector<string> {"Thomas"},
+        vector<string> {"Trask"},
     };
     vector<string> sub_vector = last_names[rand()%last_names.size()];
     return sub_vector[rand()%sub_vector.size()];
