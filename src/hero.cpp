@@ -61,49 +61,6 @@ Hero::~Hero()
 	cout << "Aww, " << name << " died\n";
 }
 
-//TODO & gets the address of, but "this" uses pointers... Consider reworking for consistency sake
-void Hero::attack(Hero *targetPointer)
-/**
- * This is a test brief.
- *
- * This is a test detailed description.
- * It spans multiple lines.
- * \dotfile attack.dot
- */
-{
-	//TODO Change srand to C++11 random library
-	//Roll 0 or 1. If 1, hit. Else, miss (do nothing)
-	srand(time(0)); //Seeds the random generation with the current system time
-	if (rand()%2 == 1)
-	{
-		targetPointer->ouch(this->getStrength());
-		cout << this->getName() << " hit " << targetPointer->getName() << " for " << this->getStrength() << "\n";
-	} else
-	{
-		cout << this->getName() << " missed " << targetPointer->getName() << "!\n";
-	}
-};
-
-void Hero::ouch(int damage)
-{
-	health -= damage;
-};
-
-string Hero::getName()
-{
-	return name;
-};
-
-int Hero::getStrength()
-{
-	return strength;
-};
-
-int Hero::getHealth()
-{
-	return health;
-};
-
 string Hero::generateName(char sex)
 {
     /**

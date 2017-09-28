@@ -1,12 +1,12 @@
 #ifndef HERO_H
 #define HERO_H
 #include <string>
-#include "thing.h"
+#include "creature.h"
 #include "equippable.h"
 
 using namespace std;
 
-class Hero: public Thing {
+class Hero: public Creature {
 	private:
 		//Equipment
 		Head * head;
@@ -38,16 +38,9 @@ class Hero: public Thing {
 			int=10,
 			int=10
 		); //Constructor - Bucky had a different constructor in 14
-		~Hero();
-		void attack(Hero *targetPointer); //Attempts to attack a target. If we don't pass a pointer, it passes by value instead of reference
-		void ouch(int damageInflicted); //Takes damage
+		~Hero();  //Destructor
 
-		//Getters
-		string getName();
-		int getStrength();
-		int getHealth();
-
-		std::string sayCatchPhrase()
+		string sayCatchPhrase()
 		{
 			return "Preaching to the choir";
 		}

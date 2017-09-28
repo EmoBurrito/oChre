@@ -4,8 +4,25 @@
 
 using namespace std;
 
+//class Statistic
+//{
+//	private:
+//		int value;
+//		unsigned int experience;
+//	protected:
+//	public:
+//		addExperience(int);
+//		getValue();
+//};
+//
+//class stats
+//{
+//
+//};
+
 class Thing
 {
+	//TODO Replace these with a stats object which is a collection of Statistic objects
 	private:
 	protected:
 		string name;

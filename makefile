@@ -3,12 +3,14 @@ PURGE=rm
 
 #The main bin
 program: consumable equippable hero main
-	$(CC) build/consumable.o build/equippable.o build/item.o build/hero.o build/main.o -o bin/oChre.exe -lm
+	$(CC) build/consumable.o build/equippable.o build/item.o build/creature.o build/hero.o build/main.o -o bin/oChre.exe -lm
 main:
 	$(CC) -c src/main.cpp -o build/main.o
 
 #Creatures
-hero:
+creature:
+	$(CC) -c src/creature.cpp -o build/creature.o
+hero: creature
 	$(CC) -c src/hero.cpp -o build/hero.o
 
 #Items
