@@ -1,7 +1,7 @@
 #ifndef PARTY_H
 #define PARTY_H
 #include <string>
-#include "hero.h"
+#include "creature.h"
 
 class Party
 {
@@ -18,7 +18,7 @@ class Party
         //Party inventory
         unsigned int purse[4]; //Four denominations, each worth 100 of the last. Gems, gold, silver, copper. Consider notes for large amounts.
         unsigned int food; //Days worth of rations for the party. Consider float and having different races eat different amounts.
-		Hero members[6]; //Maximum six party members at a time //TODO Consider mallocing to save a hero or two
+		Humanoid members[6]; //Maximum six party members at a time //TODO Consider dynamic sizing
 		//C++ requires sizeOfs to be passed with array, just like C
 		//C++ also supports multi-dimensional arrays but I'd personally prefer nested ones. More memory efficient.
 

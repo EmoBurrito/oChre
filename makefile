@@ -2,16 +2,16 @@ CC=g++
 PURGE=rm
 
 #The main bin
-program: consumable equippable hero main
-	$(CC) build/consumable.o build/equippable.o build/item.o build/creature.o build/hero.o build/main.o -o bin/oChre.exe -lm
+program: consumable equippable human main
+	$(CC) build/consumable.o build/equippable.o build/item.o build/creature.o build/human.o build/main.o -o bin/oChre.exe -lm
 main:
 	$(CC) -c src/main.cpp -o build/main.o
 
 #Creatures
 creature:
 	$(CC) -c src/creature.cpp -o build/creature.o
-hero: creature
-	$(CC) -c src/hero.cpp -o build/hero.o
+human: creature
+	$(CC) -c src/human.cpp -o build/human.o
 
 #Items
 item:

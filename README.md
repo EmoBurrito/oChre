@@ -34,7 +34,8 @@ Races will have different role play opportunities. For example, some characters 
 Some races may have special abilities, be able to equip (or lack there of) specific things. See below for examples.
 
 Races will include (more to come):
-* **Humans** make up more than a strong majority of the population, and as such craft the most plentiful equipment. They are able to use most equipment and are a fine balance amongst all stats.  
+* **Humans** make up more than a strong majority of the population, and as such craft the most plentiful equipment.
+  They are able to use most equipment and are a fine balance amongst all stats.  
 * **Half Orcs** are quite similar to humans but are often physically stronger and, as such, solve more problems in this manner. Although slightly heavier built from humans, they can still equip most, if not all, of what humans can. 
 * **Elves** are every so slightly smaller than humans, but a bit quicker and more dexterous. Their belief is that the best way to withstand a hit is to not let it connect. Their size difference from humans is not great enough to warrant separate sizing.
   * **High Elves** spend much of their time studying the arcane arts to keep their opponents at bay. If you can defeat them from a distance or use spells to assist yourself, there is little reason to deal with them up close. 

@@ -1,9 +1,4 @@
-/**
-	Hero class, hero.cpp
-	Purpose: To server as the blueprint of a hero
-*/
-
-#include "hero.h"
+#include "human.h"
 #include <vector>
 #include <iostream> //Used for I/O
 #include <cstdlib> //Used for random number generation
@@ -11,10 +6,12 @@
 
 using namespace std;
 
-//The constructor. A method automatically called when a new Hero is instantiated
-//Using some weird method of setting variables with the colon (Bucky E45)
-//This was good for so you didn't have to make a new one before passing it in, you could make it there (E47)
-Hero::Hero(string name,
+/**
+ * Human constructor.
+ *
+ * We are abandoning the setting of default variables via the colon method becuase that has issues with inheritance.
+ */
+Human::Human(string name,
 		   int health,
 		   int mana,
 		   int accuracy,
@@ -35,7 +32,7 @@ Hero::Hero(string name,
 	//If a name wasn't provided, generate one
 	if (name=="")
 	{
-		this->name = Hero::generateName();
+		this->name = Human::generateName();
 	}
 	else
 	{
@@ -50,28 +47,31 @@ Hero::Hero(string name,
 //	this->rHand = NULL;
 };
 
-/*!
- *	\brief Hero destructor
+/**
+ *	Human destructor
  *
  *	C++ destructors take no parameters and have no return type. Not even void.
  *	Cannot be overloaded.
  */
-Hero::~Hero()
+Human::~Human()
 {
 	cout << "Aww, " << name << " died\n";
 }
 
-string Hero::generateName(char sex)
+/**
+ * Returns a string of a randomly generated name.
+ *
+ * Used if a name is not supplied.
+ */
+string Human::generateName(char sex)
 {
-    /**
-     * Returns a string of a randomly generated name.
-     *
-     * Used if a name is not supplied.
-     */
     srand(time(0));
     string first;
     string last;
-    if (rand()%2 == 0)
+    if (rand()%2 == 0)/**
+	Human class, human.cpp
+	Purpose: To server as the blueprint of a human
+*/
     {
         first = generateNameFirst(sex);
         last = generateNameLast();
@@ -85,21 +85,21 @@ string Hero::generateName(char sex)
 	return first + " " + last;
 }
 
-string Hero::generateNameFirst(char sex) {
-    /**
-     * generateName helper method. Generates first name. If you have contributed, feel free to add your name.
-     *
-     * The names are sorted first into genders, then into spellings of. This is to prevent multiple spellings of one
-     * name to become increasingly popular. For example, supposed we had Aubrey, Aubry, John, and Tom. This would mean
-     * that half of the given population would be named some form of Aubrey. By doing it this way, we are making it so
-     * that 1/3rd of the population is named Aubrey and then half of all Aubreys are spelled one way. while the other
-     * half are spelled the other.
-     *
-     * Spellings of names alphabetically, and then vectors are sorted alphabetically based on sub-vectors first bucket.
-     *
-     * TODO: Separate based on race.
-     * TODO: Force sex to lower case.
-     */
+/**
+ * generateName helper method. Generates first name. If you have contributed, feel free to add your name.
+ *
+ * The names are sorted first into genders, then into spellings of. This is to prevent multiple spellings of one
+ * name to become increasingly popular. For example, supposed we had Aubrey, Aubry, John, and Tom. This would mean
+ * that half of the given population would be named some form of Aubrey. By doing it this way, we are making it so
+ * that 1/3rd of the population is named Aubrey and then half of all Aubreys are spelled one way. while the other
+ * half are spelled the other.
+ *
+ * Spellings of names alphabetically, and then vectors are sorted alphabetically based on sub-vectors first bucket.
+ *
+ * TODO: Separate based on race.
+ * TODO: Force sex to lower case.
+ */
+string Human::generateNameFirst(char sex) {
     if (sex == 'm')
     {
         vector<vector<string>> male_names = {
@@ -154,13 +154,12 @@ string Hero::generateNameFirst(char sex) {
         return sub_vector[rand()%sub_vector.size()];
     }
 }
-
-string Hero::generateNameLast() {
-    /**
-     * generateName helper method. Generates last name.
-     *
-     * TODO: Separate based on race.
-     */
+/**
+ * generateName helper method. Generates last name.
+ *
+ * TODO: Separate based on race.
+ */
+string Human::generateNameLast() {
     vector<vector<string>> last_names = {
         vector<string> {"Abbadelli"},
         vector<string> {"Altoviti"},
@@ -178,11 +177,10 @@ string Hero::generateNameLast() {
     return sub_vector[rand()%sub_vector.size()];
 }
 
-string Hero::generateNameCompound() {
-    /**
-     * generateName helper method. Generates a compound last name.
-     */
-
+/**
+ * generateName helper method. Generates a compound last name.
+ */
+string Human::generateNameCompound() {
     vector<vector<string>> first = {
         vector<string> {"Chicken"},
         vector<string> {"Light"},
