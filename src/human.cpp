@@ -19,8 +19,7 @@ Human::Human(string name,
 		   int speed,
 		   int intellect,
 		   int wisdom,
-		   int luck)
-{
+		   int luck) {
 	this->health = health;
 	this->mana = mana;
 	this->accuracy = accuracy;
@@ -68,10 +67,7 @@ string Human::generateName(char sex)
     srand(time(0));
     string first;
     string last;
-    if (rand()%2 == 0)/**
-	Human class, human.cpp
-	Purpose: To server as the blueprint of a human
-*/
+    if (rand()%2 == 0)
     {
         first = generateNameFirst(sex);
         last = generateNameLast();

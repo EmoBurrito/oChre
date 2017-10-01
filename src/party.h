@@ -27,6 +27,7 @@ class Party
 	public:
 		Party();
 		void printInventory();
+        void loot(Creature);
 
 		//Money
 		bool moneyIncrease(unsigned int value[4]);

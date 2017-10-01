@@ -2,6 +2,7 @@
 #include <string>
 #include "party.h"
 #include "human.h"
+#include "rat.h"
 #include "equippable.h"
 
 using namespace std;
@@ -34,6 +35,16 @@ int main()
 	Human my_antagonist("", 12, 6); //Let's make someone to fight
 
 	cout << "Our human's name is " << my_protagonist.getName() << " with " << my_protagonist.getHealth() << " health.\n";
+
+    Rat rat;
+    cout << "Oh, gross! A " << rat.getName() << "! Get it!!\n";
+//    delete rat;  //Not only does this not work, I don't think it's the best way to go about this
+    //TODO Attack it until it is dead.
+
+    GiantRat giantRat;
+    cout << "Jeez, look at that " << giantRat.getName() << "! They sure grow large around here...\n";
+    //TODO Wail on it 'til it dies too.
+
 	cout << my_antagonist.getName() << " doesn't like " << my_protagonist.getName() << ".\n";
 	cout << my_antagonist.getName() << "'s strength is " <<  my_antagonist.getStrength() << ".\n";
 	my_antagonist.attack(&my_protagonist); //Pass the address, essentially creating a pointer. Look out, Todd!

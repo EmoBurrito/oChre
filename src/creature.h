@@ -11,7 +11,7 @@ class Creature: public Thing
     protected:
     public:
         void attack(Creature *targetPointer); //Attempts to attack a target. If we don't pass a pointer, it passes by value instead of reference
-        void ouch(int damageInflicted); //Takes damage
+        void ouch(int damageInflicted); //Takes damage. //TODO Why is this public?
 
         //Getters
         string getName();

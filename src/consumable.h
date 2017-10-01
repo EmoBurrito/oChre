@@ -2,9 +2,9 @@
 #define CONSUMABLE_H
 
 #include <string>
-#include "thing.h"
+#include "item.h"
 
-class Consumable: public Thing
+class Consumable: public Item
 {
     private:
 
