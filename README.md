@@ -1,12 +1,21 @@
 # Ochrewood Tribute v0.0.3
-**Ochrewood Tribute** is a project that I started to further explore deploying applications, broaden my use of different languages and experiment with cross platform GUIs. I am by no means an expert with C++. In fact, I chose C++ because I had worked with C and C# previously. I liked C for it's speed, and C# for being object oriented. C++ seemed to be a good middle ground for being a compiled language, object oriented, and cross platform. There are future plans to use [Ogre][1] for the GUI, but little has been done as of this point.
+**Ochrewood Tribute** is a project that I started to further explore deploying applications,
+broaden my use of different languages and experiment with cross platform GUIs.
+I am by no means an expert with C++. In fact, I chose C++ because I had worked with C and C# previously.
+I liked C for it's speed, and C# for being object oriented.
+C++ seemed to be a good middle ground for being a compiled language, object oriented, and cross platform.
+There are future plans to use [Ogre][1] for the GUI, but little has been done as of this point.
 
-**Ochrewood Tribute** is inspired by games such as [Might and Magic][2], [Wizardry][3], [Ultima][4], and [Legend of Grimrock][5], in the sense that the player assumes control of a party of characters that all travel together with intense [personal space issues][6] (Characters may be removed/added to the party, but the party must travel as one entity). The player controls a party of 1-6 characters that may be added to/removed from the party at specific locations.
+**Ochrewood Tribute** is inspired by games such as [Might and Magic][2], [Wizardry][3], [Ultima][4], and [Legend of Grimrock][5], 
+in the sense that the player assumes control of a party of characters that all travel together with intense [personal space issues][6]
+(Characters may be removed/added to the party, but the party must travel as one entity).
+The player controls a party of 1-6 characters that may be added to/removed from the party at specific locations.
 
 *TODO: Talk about how loved games as a kid, new ones different*
 
 ## Plot
-*TBD: Rebellion/Uprising against corrupt ruling? Or perhaps misuse of magic? Corrupt magic government? OOH Greedy magic government~*
+*Dragons like gold and shiny. Local kingdom borrows money from dragon's pile on promise of return with interest.
+Corporate bwankster of a dragon essentially. King thinks "Why not break off? lol". Dragon is named Dhephnul.*
 
 ## Mechanics
 ### Attributes
@@ -27,15 +36,20 @@ Character's won't have a static level so much as their individual attributes wil
 Varying races will play mostly the same, with the exception that some equipment may be shaped for specific racial body types.
 
 ### Races
-Races will have attribute differences, but not in the same sense as many other typical RPGs. Instead of races being "naturally stronger" and receiving a strength bonus, they will instead level their strength faster than other races. This will give them a benefit in early game over other characters that will scale better into late game. This also means that, given enough time, any character can max out any attribute.
+Races will have attribute differences, but not in the same sense as many other typical RPGs.
+Instead of races being "naturally stronger" and receiving a strength bonus, they will instead level their strength faster than other races.
+This will give them a benefit in early game over other characters that will scale better into late game.
+This also means that, given enough time, any character can max out any attribute.
 
-Races will have different role play opportunities. For example, some characters may prefer or dislike other races and react differently to the party member talking to them. Take note of these tensions. It may mean that specific party members may be ganged up on in combat.
+Races will have different role play opportunities. For example, some characters may prefer or dislike other races and 
+react differently to the party member talking to them. Take note of these tensions. It may mean that specific party 
+members may be ganged up on in combat.
 
-Some races may have special abilities, be able to equip (or lack there of) specific things. See below for examples.
+Races ages at different rates. This will mostly affect role play until age extremes are reached.
 
-Races will include (more to come):
-* **Humans** make up more than a strong majority of the population, and as such craft the most plentiful equipment.
-  They are able to use most equipment and are a fine balance amongst all stats.  
+Some races may have special abilities, be able to equip (or lack there of) specific things. See race class files for details.
+
+Races will include humans,  
 * **Half Orcs** are quite similar to humans but are often physically stronger and, as such, solve more problems in this manner. Although slightly heavier built from humans, they can still equip most, if not all, of what humans can. 
 * **Elves** are every so slightly smaller than humans, but a bit quicker and more dexterous. Their belief is that the best way to withstand a hit is to not let it connect. Their size difference from humans is not great enough to warrant separate sizing.
   * **High Elves** spend much of their time studying the arcane arts to keep their opponents at bay. If you can defeat them from a distance or use spells to assist yourself, there is little reason to deal with them up close. 
@@ -62,12 +76,17 @@ Because the documentation is generated via code comments, it is important that a
 #### Compiling From Source
 Compiling from source is recommended as it will ensure you always have the 
 ##### Linux
-*TODO g++*
+*TODO Expand upon this. I think you only need to install g++.*
+```bash
+cd /path/to/oChre
+make
+bin/oChre.exe
+```
 ##### Windows
-*TODO mingw*
+*Similar to Linux, but instead of g++, you'll need mingw and you may need to tweak the makefile.*
 ##### Mac
 None of the contributors to date own a Mac system, and have little interest in acquiring one.
-As such, we are unable to provide instructions for such.
+As such, we are unable to provide instructions for such. If you have a Mac system and would like to contribute, we more than welcome it.
 
 #### Pre-compiled Binaries
 At this time, **Ochrewood Tribute** is not popular enough to host pre-compiled binaries anywhere.
@@ -79,12 +98,15 @@ If we get a larger following and enough demand, we may consider hosting pre-comp
 2. Variable names:
    * Use full variable names. No single letter variables unless it is a counter like *int i in ...*
    * Use "my_instance" to indicate that it is an instance, and there is only one instance
-3. There is no character limit per line, but do not abuse this. If you need 90 characters on a line to work, fine, but obviously don't one-line an entire source file. This rule is even less strict with text/markdown files. This isn't the 80's. Wordwrap is a thing.
+3. There is no character limit per line, but do not abuse this.
+If you need 90 characters on a line to work, fine, but obviously don't one-line an entire source file.
+This rule is even less strict with text/markdown files. This isn't the 80's. Wordwrap is a thing.
 4. All source code must be documented according to Doxygen standards. This will allow Doxygen to generate an html manual.
 5. Multiple return statements are fine.
 
 ### Version History
-Versioning will be handled in a X.Y.Z format, where X is a major release, Y is the merging of a branch into master that a player will definetly notice, and Z is the merging of a branch into master that the player may not notice. See below for examples.
+Versioning will be handled in a X.Y.Z format, where X is a major release, Y is the merging of a branch into master that a player will definetly notice, and Z is the merging of a branch into master that the player may not notice.
+See below for examples.
 * ~~1: Inclusion of Ogre~~ 
 * 0: Terminal based interaction
   * ~~0.4: Non-hostile conversation, commerce, quests~~
@@ -100,6 +122,8 @@ Versioning will be handled in a X.Y.Z format, where X is a major release, Y is t
 
 ### TODO
 #### Priority
+* **UNIT TESTING**
+* Move name generation to Humanoid class, and just give each race their own name lists.
 * Create Statistic object with value and experience counter.
     Overload math operators.
 * Create Stats object that is a specific collection of Statistics.
@@ -109,14 +133,24 @@ Versioning will be handled in a X.Y.Z format, where X is a major release, Y is t
 * Abstract Human into Creature so that it can be extended by rat, wolf, zombie, etc.
 
 #### Back-Burner
+* Make equipment "tailorable" (10% bonus when equipped by character tailored to. Not equippable by others.)
 * Give creatures two sets of stats: base and effective.
-    Rather than subtracting at unequip, we will simply run a recalculation. 
+  Rather than subtracting at unequip, we will simply run a recalculation. 
 * Get Creature interact working. This will involve a hostility measure of some sort.
   * Get converse working
   * Get attack working
     * Items only counting if they are the ones making contact, as discussed with Hunter
 * Get items (both consumable and equipment) functioning
 * Spells, and the hero's associated books
+* Add creature age
+* Add ailments and buffs like tired, magically asleep, drunk, diseased, unconscious, cursed, insane, paralyzed, stoned, poison, dead, obliterated, blessed, hastened, etc.
+    Make sure they effect everything. We don't need one ailment per stat but we should make sure that no stat is untouchable.
+* Add creature types like undead, vampire, lycan, etc.
+* Add two money counters in party. One for purse, one for banked.
+  * Ensure max and min caps to prevent overflows.
+* Track time.
+  * Implement banking interest. 
+* Implement sound. Ogre may have something for this, or we can try [SDL][8] (be sure to include necessary license files if we do)
 * Add "Neekohluhs" named NPC because I told someone I would
 
 [1]: http://www.ogre3d.org/
@@ -126,3 +160,4 @@ Versioning will be handled in a X.Y.Z format, where X is a major release, Y is t
 [5]: http://www.grimrock.net/
 [6]: https://youtu.be/vQs1uTTjTAM?t=76
 [7]: http://www.stack.nl/~dimitri/doxygen/
+[8]: https://www.libsdl.org/

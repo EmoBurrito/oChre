@@ -1,5 +1,5 @@
 #include <string>
-#include "equippable.h"
+#include "../include/equippable.h"
 
 //Equippable::Equippable()
 //{

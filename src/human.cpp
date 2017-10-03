@@ -1,4 +1,4 @@
-#include "human.h"
+#include "../include/human.h"
 #include <vector>
 #include <iostream> //Used for I/O
 #include <cstdlib> //Used for random number generation

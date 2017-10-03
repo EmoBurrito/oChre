@@ -1,5 +1,5 @@
 #include <string>
-#include "creature.h"
+#include "../include/creature.h"
 
 using namespace std;
 

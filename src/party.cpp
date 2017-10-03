@@ -3,7 +3,7 @@
 	Purpose: To server as the blueprint of our one party
 */
 #include <iostream>
-#include "party.h"
+#include "../include/party.h"
 
 Party::Party()
 {

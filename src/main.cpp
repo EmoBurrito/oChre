@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
-#include "party.h"
-#include "human.h"
-#include "rat.h"
-#include "equippable.h"
+#include "../include/party.h"
+#include "../include/human.h"
+#include "../include/rat.h"
+#include "../include/equippable.h"
 
 using namespace std;
 
@@ -39,7 +39,11 @@ int main()
     Rat rat;
     cout << "Oh, gross! A " << rat.getName() << "! Get it!!\n";
 //    delete rat;  //Not only does this not work, I don't think it's the best way to go about this
-    //TODO Attack it until it is dead.
+    while (rat.getHealth() > 0) {
+		my_protagonist.attack(&rat);
+	}
+	Rat *rat_pointer = &rat;
+	rat_pointer = NULL;
 
     GiantRat giantRat;
     cout << "Jeez, look at that " << giantRat.getName() << "! They sure grow large around here...\n";
