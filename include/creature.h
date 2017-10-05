@@ -5,6 +5,7 @@
 #include "thing.h"
 #include "equippable.h"
 
+///Abstract parent class to abstract creature types.
 class Creature: public Thing
 {
     private:
@@ -19,6 +20,7 @@ class Creature: public Thing
         int getHealth();
 };
 
+///Abstract class for bipedal, two-armed creatures.
 class Humanoid: public Creature
 {
     private:
@@ -35,6 +37,7 @@ class Humanoid: public Creature
     public:
 };
 
+///Abstract Rodent. Consider combining into quadruped.
 class Rodent: public Creature
 {
     private:
@@ -42,6 +45,7 @@ class Rodent: public Creature
     public:
 };
 
+///Abstract Canine. Consider combining into quadruped.
 class Canine: public Creature
 {
     private:
@@ -49,6 +53,7 @@ class Canine: public Creature
     public:
 };
 
+///Abstract Feline. Consider combining into quadruped.
 class Feline: public Creature
 {
     private:
@@ -56,6 +61,7 @@ class Feline: public Creature
     public:
 };
 
+///Abstract Reptile. Consider combining into quadruped.
 class Reptile: public Creature
 {
     private:
@@ -63,6 +69,7 @@ class Reptile: public Creature
     public:
 };
 
+///Abstract Undead. Consider making a type like "Undead Human" or "Undead Goblin", etc.
 class Undead: public Creature
 {
     private:

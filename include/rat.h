@@ -6,7 +6,7 @@
 
 using namespace std;
 
-///Rat class. Instantiable.
+///Instantiable Rat creature.
 /**
  * A simple rat.
  */
@@ -27,7 +27,7 @@ public:
     ~Rat();
 };
 
-///Giant Rat class. Instantiable.
+///Instantiable GiantRat creature.
 /**
  * A giant rat. Not to be taken as lightly as regular rats.
  */

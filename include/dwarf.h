@@ -1,16 +1,16 @@
-#ifndef HUMAN_H
-#define HUMAN_H
+#ifndef DWARF_H
+#define DWARF_H
 #include <string>
 #include "creature.h"
 
 using namespace std;
 
-///Instantiable Human creature.
+///Instantiable Dwarf creature.
 /**
- * \b Humans make up more than a strong majority of the population, and as such craft the most plentiful equipment.
- *  They are a fine balance amongst all stats.
+ * \b Dwarves are short, stocky, strong as an ox but smarter than one too, and full of vigor.
+ * It takes a lot of force to push a dwarf over.
  */
-class Human: public Humanoid {
+class Dwarf: public Humanoid {
 private:
 	//Internal methods
 	//TODO Move these methods to humanoid class that draw from vectors in the children
@@ -23,7 +23,7 @@ protected:
 
 public:
 	//Default values go in function prototypes only
-	Human(
+	Dwarf(
 		string name="",
 		int=10,
 		int=10,
@@ -34,7 +34,7 @@ public:
 		int=10,
 		int=10
 	); //Constructor - Bucky had a different constructor in 14
-	~Human();  //Destructor
+	~Dwarf();  //Destructor
 
 	string sayCatchPhrase()
 	{
@@ -44,4 +44,4 @@ public:
 
 };
 
-#endif //HUMAN_H
+#endif //DWARF_H

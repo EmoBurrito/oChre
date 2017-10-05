@@ -1,16 +1,15 @@
-#ifndef HUMAN_H
-#define HUMAN_H
+#ifndef ORC_H
+#define ORC_H
 #include <string>
 #include "creature.h"
 
 using namespace std;
 
-///Instantiable Human creature.
+///Instantiable Orc creature.
 /**
- * \b Humans make up more than a strong majority of the population, and as such craft the most plentiful equipment.
- *  They are a fine balance amongst all stats.
+ * \b Orcs are quite similar to humans but are often physically stronger and, as such, solve more problems in this manner.
  */
-class Human: public Humanoid {
+class Orc: public Humanoid {
 private:
 	//Internal methods
 	//TODO Move these methods to humanoid class that draw from vectors in the children
@@ -23,7 +22,7 @@ protected:
 
 public:
 	//Default values go in function prototypes only
-	Human(
+	Orc(
 		string name="",
 		int=10,
 		int=10,
@@ -34,7 +33,7 @@ public:
 		int=10,
 		int=10
 	); //Constructor - Bucky had a different constructor in 14
-	~Human();  //Destructor
+	~Orc();  //Destructor
 
 	string sayCatchPhrase()
 	{
@@ -44,4 +43,4 @@ public:
 
 };
 
-#endif //HUMAN_H
+#endif //ORC_H

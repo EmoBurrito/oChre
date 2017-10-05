@@ -1,16 +1,15 @@
-#ifndef HUMAN_H
-#define HUMAN_H
+#ifndef GOBLIN_H
+#define GOBLIN_H
 #include <string>
 #include "creature.h"
 
 using namespace std;
 
-///Instantiable Human creature.
+///Instantiable Goblin creature.
 /**
- * \b Humans make up more than a strong majority of the population, and as such craft the most plentiful equipment.
- *  They are a fine balance amongst all stats.
+ * \b Goblins are a worse version of orc. Plentiful, seen as infestation. Cheap to recruit.
  */
-class Human: public Humanoid {
+class Goblin: public Humanoid {
 private:
 	//Internal methods
 	//TODO Move these methods to humanoid class that draw from vectors in the children
@@ -23,7 +22,7 @@ protected:
 
 public:
 	//Default values go in function prototypes only
-	Human(
+	Goblin(
 		string name="",
 		int=10,
 		int=10,
@@ -34,7 +33,7 @@ public:
 		int=10,
 		int=10
 	); //Constructor - Bucky had a different constructor in 14
-	~Human();  //Destructor
+	~Goblin();  //Destructor
 
 	string sayCatchPhrase()
 	{
@@ -44,4 +43,4 @@ public:
 
 };
 
-#endif //HUMAN_H
+#endif //GOBLIN_H

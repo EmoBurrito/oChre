@@ -4,6 +4,7 @@
 #include <string>
 #include "item.h"
 
+///Abstract class for items that can be worn or held.
 class Equippable: public Item
 {
     private:
@@ -14,6 +15,7 @@ class Equippable: public Item
 //        Equippable();
 };
 
+///Instantiable head gear like helmets, hats, or crowns.
 class Head: public Equippable
 {
     private:
@@ -24,6 +26,7 @@ class Head: public Equippable
         Head(std::string nameParam);
 };
 
+///Instantiable chest protection like (studded) leather or mail
 class Torso : public Equippable
 {
     private:
@@ -34,6 +37,7 @@ class Torso : public Equippable
         Torso();
 };
 
+///Instantiable gloves or gauntlets
 class Hand: public Equippable
 {
     private:
@@ -44,6 +48,7 @@ class Hand: public Equippable
         Hand(std::string nameParam);
 };
 
+///Instantiable rings to be worn on digits
 class Ring: public Equippable
 {
     private:
@@ -54,6 +59,7 @@ class Ring: public Equippable
         Ring();
 };
 
+///Instantiable leggings like (studded) leather or mail
 class Legs: public Equippable
 {
     private:
@@ -64,6 +70,7 @@ class Legs: public Equippable
         Legs();
 };
 
+///Instantiable footwear like boots
 class Feet: public Equippable
 {
     private:

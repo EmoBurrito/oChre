@@ -1,16 +1,15 @@
-#ifndef HUMAN_H
-#define HUMAN_H
+#ifndef GNOME_H
+#define GNOME_H
 #include <string>
 #include "creature.h"
 
 using namespace std;
 
-///Instantiable Human creature.
+///Instantiable Gnome creature.
 /**
- * \b Humans make up more than a strong majority of the population, and as such craft the most plentiful equipment.
- *  They are a fine balance amongst all stats.
+ * \b Gnomes are much like dark elves but different role play and harder to hit.
  */
-class Human: public Humanoid {
+class Gnome: public Humanoid {
 private:
 	//Internal methods
 	//TODO Move these methods to humanoid class that draw from vectors in the children
@@ -23,7 +22,7 @@ protected:
 
 public:
 	//Default values go in function prototypes only
-	Human(
+	Gnome(
 		string name="",
 		int=10,
 		int=10,
@@ -34,14 +33,12 @@ public:
 		int=10,
 		int=10
 	); //Constructor - Bucky had a different constructor in 14
-	~Human();  //Destructor
+	~Gnome();  //Destructor
 
 	string sayCatchPhrase()
 	{
 		return "Preaching to the choir";
 	}
-
-
 };
 
-#endif //HUMAN_H
+#endif //GNOME_H

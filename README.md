@@ -47,18 +47,10 @@ members may be ganged up on in combat.
 
 Races ages at different rates. This will mostly affect role play until age extremes are reached.
 
-Some races may have special abilities, be able to equip (or lack there of) specific things. See race class files for details.
-
-Races will include humans,  
-* **Half Orcs** are quite similar to humans but are often physically stronger and, as such, solve more problems in this manner. Although slightly heavier built from humans, they can still equip most, if not all, of what humans can. 
-* **Elves** are every so slightly smaller than humans, but a bit quicker and more dexterous. Their belief is that the best way to withstand a hit is to not let it connect. Their size difference from humans is not great enough to warrant separate sizing.
-  * **High Elves** spend much of their time studying the arcane arts to keep their opponents at bay. If you can defeat them from a distance or use spells to assist yourself, there is little reason to deal with them up close. 
-  * **Dark Elves** prefer to stick to the shadows, and rely on their speed and accuracy to help them land their blows. If they can't hit it with an arrow before it sees them, get in close and slide it apart before it has a chance to even react.
-* **Dwarves** are short, stocky, strong as an ox but smarter than one too,  and full of vigor. It takes a lot of force to push a dwarf over. Their short height and broad shape cause them to require special sized armour.
-* **Halfling** *much like dark elves but different role play and harder to hit.*
-* **Goblin** *worse version of human. Plentiful, seen as infestation. Cheap to recruit.*
-* **Trolls** *more extreme half orc. Limited in equipment*
-* **Draconic** *half dragon. Extreme unarmed damage, no equipment.*
+Races will include humans, orcs and goblins, high and dark elves, dwarves, gnomes, and draconics.
+Some races may have special abilities, be able to equip (or lack there of) specific things.
+See race class files for details.
+* **Draconic** **
 
 ### Combat
 *Sleep system*
@@ -120,22 +112,9 @@ See below for examples.
     * 0.0.2: Statistics abstracted out of Hero class, allowing for items and other classes to branch off from it, illustrating how to inherit abstract classes.
     * 0.0.1: Heroes implemented. They have stats and attack each other. That's about it.
 
-### TODO
-#### Priority
-* **UNIT TESTING**
-* Move name generation to Humanoid class, and just give each race their own name lists.
-* Create Statistic object with value and experience counter.
-    Overload math operators.
-* Create Stats object that is a specific collection of Statistics.
-    Overload math operators. Replace Thing's statistic variables with this.
-* Give creatures a leveling rate for each statistic based on race.
-* Change Hero to Human and implement other races.
-* Abstract Human into Creature so that it can be extended by rat, wolf, zombie, etc.
-
-#### Back-Burner
-* Make equipment "tailorable" (10% bonus when equipped by character tailored to. Not equippable by others.)
-* Give creatures two sets of stats: base and effective.
-  Rather than subtracting at unequip, we will simply run a recalculation. 
+### TODO Back-Burner
+If you wish to help out, please see the Projects tab as those listed items are priority.
+Any points listed here simply have not been moved there yet.
 * Get Creature interact working. This will involve a hostility measure of some sort.
   * Get converse working
   * Get attack working

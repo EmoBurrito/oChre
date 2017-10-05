@@ -39,9 +39,9 @@ int main()
     Rat rat;
     cout << "Oh, gross! A " << rat.getName() << "! Get it!!\n";
 //    delete rat;  //Not only does this not work, I don't think it's the best way to go about this
-    while (rat.getHealth() > 0) {
-		my_protagonist.attack(&rat);
-	}
+//    while (rat.getHealth() > 0) {
+//		my_protagonist.attack(&rat);
+//	}
 	Rat *rat_pointer = &rat;
 	rat_pointer = NULL;
 

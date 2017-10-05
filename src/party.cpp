@@ -1,10 +1,9 @@
-/**
-	Party class, party.cpp
-	Purpose: To server as the blueprint of our one party
-*/
 #include <iostream>
 #include "../include/party.h"
 
+/**
+ * Not sure if I want to instantiate then fill, or require characters to instantiate. Perhaps at least one?
+ */
 Party::Party()
 {
     for (int denomination = 0; denomination < sizeof(this->purse)/sizeof(this->purse[0]))

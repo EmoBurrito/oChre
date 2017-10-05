@@ -4,18 +4,21 @@
 #include <string>
 #include "thing.h"
 
+using namespace std;
+
+///Abstract class representing inanimate objects.
 class Item: public Thing
 {
-	private:
+private:
 
-	protected:
-		std::string name;
-		unsigned int value;
-		unsigned int condition; //TODO Consider maybe float?
-		unsigned int weight;
+protected:
+	string name;
+	unsigned int value;
+	unsigned int condition; //TODO Consider maybe float?
+	unsigned int weight;
 
-	public:
-		std::string getName();
+public:
+	string getName();
 };
 
 #endif //ITEM_H
