@@ -14,9 +14,7 @@ using namespace std;
  */
 class Human: public Humanoid {
 private:
-    //TODO Make vector of vectors for alternate spellings
-	const static map<char, vector<string>> GIVEN_NAMES; /**< Given names, sorted by sex. Values are for given names, with a sub-vector for spelling variations. */
-    const static vector<vector<string>> FAMILY_NAMES; /**< A vector of family names, with a sub-vector for spelling variations. */
+
 
 	//TODO Move these methods to humanoid class that draw from vectors in the children
 	static string generateName(char sex='n');
@@ -46,7 +44,11 @@ public:
 		return "Preaching to the choir";
 	}
 
-
+    //TODO Make private after testing
+    const static vector<vector<string>> MALE_NAMES; /**< A vector of male names, with a sub-vector for spelling variations. */
+    const static vector<vector<string>> FEMALE_NAMES; /**< A vector of female names, with a sub-vector for spelling variations. */
+    const static vector<vector<string>> ANDROGYNOUS_NAMES; /**< A vector of androgynous names, with a sub-vector for spelling variations. */
+    const static vector<vector<string>> FAMILY_NAMES; /**< A vector of family names, with a sub-vector for spelling variations. */
 };
 
 #endif //HUMAN_H

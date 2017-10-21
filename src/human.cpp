@@ -6,6 +6,56 @@
 
 using namespace std;
 
+const vector<vector<string>> Human::MALE_NAMES = {
+        vector<string> {"Adrian"},
+        vector<string> {"Andrew"},
+        vector<string> {"Alexander"},
+        vector<string> {"Baz"},
+        vector<string> {"Bedros"},
+        vector<string> {"Corneille"},
+        vector<string> {"Dennifer"},
+        vector<string> {"Dick", "Richard"},
+        vector<string> {"Gil", "Gillian"},
+        vector<string> {"Harrison"},
+        vector<string> {"Reggie"},
+        vector<string> {"Roderick"},
+        vector<string> {"Sal", "Salazar"},
+        vector<string> {"Zoltan"}
+};
+
+const vector<vector<string>> Human::FEMALE_NAMES = {
+        vector<string> {"Abigayle"},
+        vector<string> {"Adrianne"},
+        vector<string> {"Alexis"},
+        vector<string> {"Anna"},
+        vector<string> {"Andrea"},
+        vector<string> {"Dove"},
+        vector<string> {"Ida"},
+        vector<string> {"Jill", "Jilian"},
+        vector<string> {"Nel"}
+};
+
+const vector<vector<string>> Human::ANDROGYNOUS_NAMES = {
+        vector<string> {"Alberic"},
+        vector<string> {"Ash"},
+        vector<string> {"Aubrey", "Aubry"},
+        vector<string> {"Ora"}
+};
+
+const vector<vector<string>> Human::FAMILY_NAMES = {
+        vector<string> {"Abbadelli"},
+        vector<string> {"Altoviti"},
+        vector<string> {"Berger"},
+        vector<string> {"Bosco"},
+        vector<string> {"Chaudhri"},
+        vector<string> {"Nelli"},
+        vector<string> {"Norris"},
+        vector<string> {"Sempers"},
+        vector<string> {"September"},
+        vector<string> {"Thomas"},
+        vector<string> {"Trask"},
+};
+
 /**
  * Human constructor.
  *
@@ -98,83 +148,36 @@ string Human::generateName(char sex)
 string Human::generateNameFirst(char sex) {
     if (sex == 'm')
     {
-        vector<vector<string>> male_names = {
-            vector<string> {"Adrian"},
-            vector<string> {"Andrew"},
-            vector<string> {"Alexander"},
-            vector<string> {"Baz"},
-            vector<string> {"Bedros"},
-            vector<string> {"Corneille"},
-            vector<string> {"Dennifer"},
-            vector<string> {"Dick", "Richard"},
-		    vector<string> {"Gil", "Gillian"},
-            vector<string> {"Harrison"},
-            vector<string> {"Reggie"},
-            vector<string> {"Roderick"},
-            vector<string> {"Sal", "Salazar"},
-            vector<string> {"Zoltan"}
-        };
-
         //Get Sub-vector
-        vector<string> sub_vector = male_names[rand()%male_names.size()];
+        vector<string> sub_vector = MALE_NAMES[rand()%MALE_NAMES.size()];
         //Get name from sub-vector
         return sub_vector[rand()%sub_vector.size()];
     }
     else if (sex == 'f')
     {
-        vector<vector<string>> female_names = {
-            vector<string> {"Abigayle"},
-            vector<string> {"Adrianne"},
-            vector<string> {"Alexis"},
-            vector<string> {"Anna"},
-            vector<string> {"Andrea"},
-            vector<string> {"Dove"},
-            vector<string> {"Ida"},
-		    vector<string> {"Jill", "Jilian"},
-            vector<string> {"Nel"}
-        };
-
-        vector<string> sub_vector = female_names[rand()%female_names.size()];
+        vector<string> sub_vector = FEMALE_NAMES[rand()%FEMALE_NAMES.size()];
         return sub_vector[rand()%sub_vector.size()];
     }
     else
     {
-        vector<vector<string>> neutral_names = {
-            vector<string> {"Alberic"},
-            vector<string> {"Ash"},
-            vector<string> {"Aubrey", "Aubry"},
-            vector<string> {"Ora"}
-        };
-
-        vector<string> sub_vector = neutral_names[rand()%neutral_names.size()];
+        vector<string> sub_vector = ANDROGYNOUS_NAMES[rand()%ANDROGYNOUS_NAMES.size()];
         return sub_vector[rand()%sub_vector.size()];
     }
 }
 /**
  * generateName helper method. Generates last name.
  *
- * TODO: Separate based on race.
+ * TODO Separate based on race
  */
 string Human::generateNameLast() {
-    vector<vector<string>> last_names = {
-        vector<string> {"Abbadelli"},
-        vector<string> {"Altoviti"},
-        vector<string> {"Berger"},
-        vector<string> {"Bosco"},
-        vector<string> {"Chaudhri"},
-        vector<string> {"Nelli"},
-        vector<string> {"Norris"},
-        vector<string> {"Sempers"},
-        vector<string> {"September"},
-        vector<string> {"Thomas"},
-        vector<string> {"Trask"},
-    };
-    vector<string> sub_vector = last_names[rand()%last_names.size()];
+    vector<string> sub_vector = Human::FAMILY_NAMES[rand()%Human::FAMILY_NAMES.size()];
     return sub_vector[rand()%sub_vector.size()];
 }
 
 /**
  * generateName helper method. Generates a compound last name.
+ *
+ * TODO Move to Dwarf
  */
 string Human::generateNameCompound() {
     vector<vector<string>> first = {

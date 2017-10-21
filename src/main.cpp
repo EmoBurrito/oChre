@@ -62,6 +62,8 @@ int main()
 	cout << "Hey, look! A " << myItem.getName() << "! Get 'em, " << my_protagonist.getName() << "!\n";
 	//Equip the sword, which should modify the attack values
 	my_protagonist.attack(&my_antagonist);
+
+    cout << "This is me testing static constants: " << Human::FAMILY_NAMES[0][0] << ".\n";
 }
 
 void sizeCheck()
