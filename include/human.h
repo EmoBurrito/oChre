@@ -1,6 +1,8 @@
 #ifndef HUMAN_H
 #define HUMAN_H
 #include <string>
+#include <map>
+#include <vector>
 #include "creature.h"
 
 using namespace std;
@@ -12,7 +14,10 @@ using namespace std;
  */
 class Human: public Humanoid {
 private:
-	//Internal methods
+    //TODO Make vector of vectors for alternate spellings
+	const static map<char, vector<string>> GIVEN_NAMES; /**< Given names, sorted by sex. Values are for given names, with a sub-vector for spelling variations. */
+    const static vector<vector<string>> FAMILY_NAMES; /**< A vector of family names, with a sub-vector for spelling variations. */
+
 	//TODO Move these methods to humanoid class that draw from vectors in the children
 	static string generateName(char sex='n');
 	static string generateNameFirst(char sex='n');

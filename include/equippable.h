@@ -7,78 +7,78 @@
 ///Abstract class for items that can be worn or held.
 class Equippable: public Item
 {
-    private:
+private:
 
-    protected:
+protected:
 
-    public:
-//        Equippable();
+public:
+//    Equippable();
 };
 
 ///Instantiable head gear like helmets, hats, or crowns.
 class Head: public Equippable
 {
-    private:
+private:
 
-    protected:
+protected:
 
-    public:
-        Head(std::string nameParam);
+public:
+    Head(std::string nameParam);
 };
 
 ///Instantiable chest protection like (studded) leather or mail
 class Torso : public Equippable
 {
-    private:
+private:
 
-    protected:
+protected:
 
-    public:
-        Torso();
+public:
+    Torso();
 };
 
 ///Instantiable gloves or gauntlets
 class Hand: public Equippable
 {
-    private:
+private:
 
-    protected:
+protected:
 
-    public:
-        Hand(std::string nameParam);
+public:
+    Hand(std::string nameParam);
 };
 
 ///Instantiable rings to be worn on digits
 class Ring: public Equippable
 {
-    private:
+private:
 
-    protected:
+protected:
 
-    public:
-        Ring();
+public:
+    Ring();
 };
 
 ///Instantiable leggings like (studded) leather or mail
 class Legs: public Equippable
 {
-    private:
+private:
 
-    protected:
+protected:
 
-    public:
-        Legs();
+public:
+    Legs();
 };
 
 ///Instantiable footwear like boots
 class Feet: public Equippable
 {
-    private:
+private:
 
-    protected:
+protected:
 
-    public:
-        Feet();
+public:
+    Feet();
 };
 
 #endif //EQUIPPABLE_H

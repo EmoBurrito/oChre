@@ -53,7 +53,7 @@ int main()
 	cout << my_antagonist.getName() << "'s strength is " <<  my_antagonist.getStrength() << ".\n";
 	my_antagonist.attack(&my_protagonist); //Pass the address, essentially creating a pointer. Look out, Todd!
 	//my_protagonist.ouch(12); //TODO shouldn't need to do this, the attack should do it on it's own
-	cout << my_protagonist.getName() << " has " << my_protagonist.getHealth() << " health. remaining. Poor " << my_protagonist.getName() << ".\n";
+	cout << my_protagonist.getName() << " has " << my_protagonist.getHealth() << " health remaining. Poor " << my_protagonist.getName() << ".\n";
 	cout << my_antagonist.getName() << " has " << my_antagonist.getHealth() << " health remaining. Poor " << my_antagonist.getName() << ".\n";
 	//cout << "Test of toString: " << *my_protagonist
 
