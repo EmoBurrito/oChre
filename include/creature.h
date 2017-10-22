@@ -36,9 +36,13 @@ protected:
     Hand * lHand; /**< Gloves or gauntles will be sold as pairs from merchants and often be found as pairs while adventuring.
                   /**< However, this doesn't mean that players can't mix and match. */
     Hand * rHand; /**< Same idea as the left hand, but this one is the right. */
-    //Ring rings [20] = {}; /**< A ring for every finger and toe, because why not? */
+    //Ring rings [20] = {}; /**< A ring for every finger and toe, because why not? */ //TODO Implement with vectors?
     Legs * legs; /**< Pants. Similar idea to torso but for those long dangly arms coming out of your hips. */
     Feet * feet; /**< Boots, shoes. */
+
+    string generateName(char sex='a'); /**< Calls methods to generate a first and last name, sticks them together and returns it as one string. */
+    virtual string generateNameFirst(char sex='a') {return "You should";}; /**< Generates a first name for the humanoid. Child classes may handle this differently. */
+    virtual string generateNameLast() {return "not see this";}; /**< Generates a last name for the humanoid. Child classes may handle this differently. */
 public:
 };
 

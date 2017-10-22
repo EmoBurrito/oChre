@@ -1,4 +1,4 @@
-# Ochrewood Tribute v0.0.3
+# Ochrewood Tribute v0.0.4.0
 **Ochrewood Tribute** is a project that I started to further explore deploying applications,
 broaden my use of different languages and experiment with cross platform GUIs.
 I am by no means an expert with C++. In fact, I chose C++ because I had worked with C and C# previously.
@@ -50,7 +50,6 @@ Races ages at different rates. This will mostly affect role play until age extre
 Races will include humans, orcs and goblins, high and dark elves, dwarves, gnomes, and draconics.
 Some races may have special abilities, be able to equip (or lack there of) specific things.
 See race class files for details.
-* **Draconic** **
 
 ### Combat
 *Sleep system*
@@ -97,7 +96,8 @@ This rule is even less strict with text/markdown files. This isn't the 80's. Wor
 5. Multiple return statements are fine.
 
 ### Version History
-Versioning will be handled in a X.Y.Z format, where X is a major release, Y is the merging of a branch into master that a player will definetly notice, and Z is the merging of a branch into master that the player may not notice.
+Versioning will be handled in a W.X.Y.Z format, where W is a major release, X is an area of focus, Y is a new addition that the player may notice, and Z is a minor rewrite, such as an expanding upon the previous Y.
+In retrospect, it is really rather arbitrary.
 See below for examples.
 * ~~1: Inclusion of Ogre~~ 
 * 0: Terminal based interaction
@@ -106,31 +106,15 @@ See below for examples.
   * ~~0.2: Consumables~~
   * ~~0.1: Equipment~~
   * 0.0: Creatures
+    * 0.0.4: Dwarf race implemented. Name generation is now delegated to children of Humanoid.
+    Other races still need to be implemented.
     * 0.0.3: Item class extends Thing and is then in turn extended by Equippable and Consumable.
     Equippable is then extended by weaponry and armour classes that currently do nothing.
     This is mostly to illustrate hierarchies.
     * 0.0.2: Statistics abstracted out of Hero class, allowing for items and other classes to branch off from it, illustrating how to inherit abstract classes.
     * 0.0.1: Heroes implemented. They have stats and attack each other. That's about it.
 
-### TODO Back-Burner
 If you wish to help out, please see the Projects tab as those listed items are priority.
-Any points listed here simply have not been moved there yet.
-* Get Creature interact working. This will involve a hostility measure of some sort.
-  * Get converse working
-  * Get attack working
-    * Items only counting if they are the ones making contact, as discussed with Hunter
-* Get items (both consumable and equipment) functioning
-* Spells, and the hero's associated books
-* Add creature age
-* Add ailments and buffs like tired, magically asleep, drunk, diseased, unconscious, cursed, insane, paralyzed, stoned, poison, dead, obliterated, blessed, hastened, etc.
-    Make sure they effect everything. We don't need one ailment per stat but we should make sure that no stat is untouchable.
-* Add creature types like undead, vampire, lycan, etc.
-* Add two money counters in party. One for purse, one for banked.
-  * Ensure max and min caps to prevent overflows.
-* Track time.
-  * Implement banking interest. 
-* Implement sound. Ogre may have something for this, or we can try [SDL][8] (be sure to include necessary license files if we do)
-* Add "Neekohluhs" named NPC because I told someone I would
 
 [1]: http://www.ogre3d.org/
 [2]: https://en.wikipedia.org/wiki/Might_and_Magic
@@ -139,4 +123,3 @@ Any points listed here simply have not been moved there yet.
 [5]: http://www.grimrock.net/
 [6]: https://youtu.be/vQs1uTTjTAM?t=76
 [7]: http://www.stack.nl/~dimitri/doxygen/
-[8]: https://www.libsdl.org/

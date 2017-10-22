@@ -37,7 +37,7 @@ const vector<vector<string>> Human::FEMALE_NAMES = {
 
 const vector<vector<string>> Human::ANDROGYNOUS_NAMES = {
         vector<string> {"Alberic"},
-        vector<string> {"Ash"},
+        vector<string> {"Ash", "Ashley", "Ashleigh"},
         vector<string> {"Aubrey", "Aubry"},
         vector<string> {"Ora"}
 };
@@ -59,7 +59,8 @@ const vector<vector<string>> Human::FAMILY_NAMES = {
 /**
  * Human constructor.
  *
- * We are abandoning the setting of default variables via the colon method becuase that has issues with inheritance.
+ * We are abandoning the setting of default variables via the colon method because that has issues with inheritance.
+ * TODO Move this up to Humanoid or even Creature or hell, even Thing
  */
 Human::Human(string name,
 		   int health,
@@ -81,6 +82,7 @@ Human::Human(string name,
 	//If a name wasn't provided, generate one
 	if (name=="")
 	{
+        //TODO Do I need to specify the class, since it's in Humanoid?
 		this->name = Human::generateName();
 	}
 	else
@@ -107,29 +109,7 @@ Human::~Human()
 	cout << "Aww, " << name << " died\n";
 }
 
-/**
- * Returns a string of a randomly generated name.
- *
- * Used if a name is not supplied.
- */
-string Human::generateName(char sex)
-{
-    srand(time(0));
-    string first;
-    string last;
-    if (rand()%2 == 0)
-    {
-        first = generateNameFirst(sex);
-        last = generateNameLast();
-    }
-    else
-    {
-        first = generateNameFirst();
-        last = generateNameCompound();
-    }
 
-	return first + " " + last;
-}
 
 /**
  * generateName helper method. Generates first name. If you have contributed, feel free to add your name.
@@ -142,7 +122,6 @@ string Human::generateName(char sex)
  *
  * Spellings of names alphabetically, and then vectors are sorted alphabetically based on sub-vectors first bucket.
  *
- * TODO: Separate based on race.
  * TODO: Force sex to lower case.
  */
 string Human::generateNameFirst(char sex) {
@@ -167,47 +146,9 @@ string Human::generateNameFirst(char sex) {
 /**
  * generateName helper method. Generates last name.
  *
- * TODO Separate based on race
+ * Overrides virtual method in parent.
  */
 string Human::generateNameLast() {
-    vector<string> sub_vector = Human::FAMILY_NAMES[rand()%Human::FAMILY_NAMES.size()];
+    vector<string> sub_vector = FAMILY_NAMES[rand()%FAMILY_NAMES.size()];
     return sub_vector[rand()%sub_vector.size()];
-}
-
-/**
- * generateName helper method. Generates a compound last name.
- *
- * TODO Move to Dwarf
- */
-string Human::generateNameCompound() {
-    vector<vector<string>> first = {
-        vector<string> {"Chicken"},
-        vector<string> {"Light"},
-        vector<string> {"Falcon"},
-        vector<string> {"Finger"},
-        vector<string> {"Hawk"},
-        vector<string> {"Mc"},
-        vector<string> {"Mac"},
-        vector<string> {"Nerf"},
-        vector<string> {"O'"},
-        vector<string> {"Pig"},
-        vector<string> {"Rock"},
-        vector<string> {"Stone"}
-    };
-    vector<vector<string>> second = {
-        vector<string> {"bringer"},
-        vector<string> {"fists"},
-        vector<string> {"foot"},
-        vector<string> {"fucker"},
-        vector<string> {"hand"},
-        vector<string> {"haver"},
-        vector<string> {"herder"},
-        vector<string> {"holder"},
-        vector<string> {"licker"},
-        vector<string> {"smasher"}
-    };
-
-    vector<string> sub_first = first[rand()%first.size()];
-    vector<string> sub_second = second[rand()%second.size()];
-    return sub_first[rand()%sub_first.size()] + sub_second[rand()%sub_second.size()];
 }

@@ -2,6 +2,7 @@
 #include <string>
 #include "../include/party.h"
 #include "../include/human.h"
+#include "../include/dwarf.h"
 #include "../include/rat.h"
 #include "../include/equippable.h"
 
@@ -33,6 +34,7 @@ int main()
 
 	Human my_protagonist(humanName, 15, 12); //Makes new human with our input name
 	Human my_antagonist("", 12, 6); //Let's make someone to fight
+    Dwarf my_dwarf("", 15, 9); //And someone a different race
 
 	cout << "Our human's name is " << my_protagonist.getName() << " with " << my_protagonist.getHealth() << " health.\n";
 
@@ -49,7 +51,7 @@ int main()
     cout << "Jeez, look at that " << giantRat.getName() << "! They sure grow large around here...\n";
     //TODO Wail on it 'til it dies too.
 
-	cout << my_antagonist.getName() << " doesn't like " << my_protagonist.getName() << ".\n";
+	cout << my_antagonist.getName() << " and " << my_dwarf.getName() << " don't like " << my_protagonist.getName() << ".\n";
 	cout << my_antagonist.getName() << "'s strength is " <<  my_antagonist.getStrength() << ".\n";
 	my_antagonist.attack(&my_protagonist); //Pass the address, essentially creating a pointer. Look out, Todd!
 	//my_protagonist.ouch(12); //TODO shouldn't need to do this, the attack should do it on it's own
@@ -62,8 +64,6 @@ int main()
 	cout << "Hey, look! A " << myItem.getName() << "! Get 'em, " << my_protagonist.getName() << "!\n";
 	//Equip the sword, which should modify the attack values
 	my_protagonist.attack(&my_antagonist);
-
-    cout << "This is me testing static constants: " << Human::FAMILY_NAMES[0][0] << ".\n";
 }
 
 void sizeCheck()
