@@ -1,12 +1,17 @@
 #include <string>
-#include "../include/equippable.h"
+#include "equippable.h"
 
-//Equippable::Equippable()
-//{
-//
-//};
+Equippable::Equippable()
+{
+    equipped = false;
+};
+
+Equippable::equipItem(bool equipItem)
+{
+    equipped = equipItem;
+}
 
 Hand::Hand(std::string nameParam)
 {
     this->name = nameParam;
-}
+}   

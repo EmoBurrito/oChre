@@ -8,11 +8,14 @@
 class Equippable: public Item
 {
 private:
-
+    //has the item been equipped
+    bool equipped;
+    ///Function to set the equippable as equipped
+    void equiptItem(bool equip_item);
 protected:
 
 public:
-//    Equippable();
+    Equippable();
 };
 
 ///Instantiable head gear like helmets, hats, or crowns.
