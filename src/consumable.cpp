@@ -1,4 +1,4 @@
-#include "consumable.h"
+#include "../include/consumable.h"
 #include <string>
 
 Consumable::Consumable()
