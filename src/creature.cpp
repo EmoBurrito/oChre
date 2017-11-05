@@ -1,3 +1,5 @@
+#include <cstdlib>
+#include <ctime>
 #include <string>
 #include "../include/creature.h"
 

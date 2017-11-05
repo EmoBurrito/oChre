@@ -13,10 +13,10 @@ using namespace std;
  */
 class Human: public Humanoid {
 private:
-    const static vector<vector<string>> MALE_NAMES; /**< A vector of male names, with a sub-vector for spelling variations. */
-    const static vector<vector<string>> FEMALE_NAMES; /**< A vector of female names, with a sub-vector for spelling variations. */
-    const static vector<vector<string>> ANDROGYNOUS_NAMES; /**< A vector of androgynous names, with a sub-vector for spelling variations. */
-    const static vector<vector<string>> FAMILY_NAMES; /**< A vector of family names, with a sub-vector for spelling variations. */
+    const static vector< vector<string> > MALE_NAMES; /**< A vector of male names, with a sub-vector for spelling variations. */
+    const static vector< vector<string> > FEMALE_NAMES; /**< A vector of female names, with a sub-vector for spelling variations. */
+    const static vector< vector<string> > ANDROGYNOUS_NAMES; /**< A vector of androgynous names, with a sub-vector for spelling variations. */
+    const static vector< vector<string> > FAMILY_NAMES; /**< A vector of family names, with a sub-vector for spelling variations. */
 
 protected:
 	string generateNameFirst(char sex='a') override;

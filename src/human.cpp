@@ -6,7 +6,8 @@
 
 using namespace std;
 
-const vector<vector<string>> Human::MALE_NAMES = {
+//This needs to be spaced like this because mingw is special needs
+const vector< vector<string> > Human::MALE_NAMES = {
         vector<string> {"Adrian"},
         vector<string> {"Andrew"},
         vector<string> {"Alexander"},
@@ -17,13 +18,14 @@ const vector<vector<string>> Human::MALE_NAMES = {
         vector<string> {"Dick", "Richard"},
         vector<string> {"Gil", "Gillian"},
         vector<string> {"Harrison"},
-        vector<string> {"Reggie"},
+        vector<string> {"Reggie", "Reginald"},
+		vector<string> {"Regis"},
         vector<string> {"Roderick"},
         vector<string> {"Sal", "Salazar"},
         vector<string> {"Zoltan"}
 };
 
-const vector<vector<string>> Human::FEMALE_NAMES = {
+const vector< vector<string> > Human::FEMALE_NAMES = {
         vector<string> {"Abigayle"},
         vector<string> {"Adrianne"},
         vector<string> {"Alexis"},
@@ -35,14 +37,15 @@ const vector<vector<string>> Human::FEMALE_NAMES = {
         vector<string> {"Nel"}
 };
 
-const vector<vector<string>> Human::ANDROGYNOUS_NAMES = {
+const vector< vector<string> > Human::ANDROGYNOUS_NAMES = {
         vector<string> {"Alberic"},
+		vector<string> {"Andy"},
         vector<string> {"Ash", "Ashley", "Ashleigh"},
         vector<string> {"Aubrey", "Aubry"},
         vector<string> {"Ora"}
 };
 
-const vector<vector<string>> Human::FAMILY_NAMES = {
+const vector< vector<string> > Human::FAMILY_NAMES = {
         vector<string> {"Abbadelli"},
         vector<string> {"Altoviti"},
         vector<string> {"Berger"},
@@ -125,6 +128,7 @@ Human::~Human()
  * TODO: Force sex to lower case.
  */
 string Human::generateNameFirst(char sex) {
+	srand(time(0));
     if (sex == 'm')
     {
         //Get Sub-vector

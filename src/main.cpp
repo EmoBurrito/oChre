@@ -3,6 +3,7 @@
 #include "../include/party.h"
 #include "../include/human.h"
 #include "../include/dwarf.h"
+#include "../include/goblin.h"
 #include "../include/rat.h"
 #include "../include/equippable.h"
 
@@ -35,6 +36,7 @@ int main()
 	Human my_protagonist(humanName, 15, 12); //Makes new human with our input name
 	Human my_antagonist("", 12, 6); //Let's make someone to fight
     Dwarf my_dwarf("", 15, 9); //And someone a different race
+	Goblin my_goblin("", 5, 6);
 
 	cout << "Our human's name is " << my_protagonist.getName() << " with " << my_protagonist.getHealth() << " health.\n";
 
@@ -51,7 +53,7 @@ int main()
     cout << "Jeez, look at that " << giantRat.getName() << "! They sure grow large around here...\n";
     //TODO Wail on it 'til it dies too.
 
-	cout << my_antagonist.getName() << " and " << my_dwarf.getName() << " don't like " << my_protagonist.getName() << ".\n";
+	cout << my_antagonist.getName() << ", " << my_dwarf.getName() << " and " << my_goblin.getName() << " don't like " << my_protagonist.getName() << ".\n";
 	cout << my_antagonist.getName() << "'s strength is " <<  my_antagonist.getStrength() << ".\n";
 	my_antagonist.attack(&my_protagonist); //Pass the address, essentially creating a pointer. Look out, Todd!
 	//my_protagonist.ouch(12); //TODO shouldn't need to do this, the attack should do it on it's own

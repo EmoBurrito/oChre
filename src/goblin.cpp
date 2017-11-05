@@ -1,58 +1,22 @@
-#include "../include/dwarf.h"
+#include "../include/goblin.h"
 #include <vector>
 #include <iostream> //Used for I/O
 #include <cstdlib> //Used for random number generation
 #include <ctime> //Used to access system time, helps random generation
+#include <cctype>
 
 using namespace std;
 
-const vector<string> Dwarf::MALE_NAMES = {
-        "Imadwarflol"
-};
-
-const vector<string> Dwarf::FEMALE_NAMES = {
-        "Imadwarflol"
-};
-
-const vector<string> Dwarf::ANDROGYNOUS_NAMES = {
-        "Imadwarflol"
-};
-
-const vector<string> Dwarf::FAMILY_NAMES1 = {
-		"Chicken",
-        "Light",
-        "Falcon",
-        "Finger",
-        "Hawk",
-        "Mc",
-        "Mac",
-        "Nerf",
-        "O'",
-        "Pig",
-        "Rock",
-        "Stone"
-};
-
-const vector<string> Dwarf::FAMILY_NAMES2 = {
-		"bringer",
-        "fists",
-        "foot",
-        "fucker",
-        "hand",
-        "haver",
-        "herder",
-        "holder",
-        "licker",
-        "smasher"
-};
+const vector<char> Goblin::CONSONANTS = {'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'};
+const vector<char> Goblin::VOWELS = {'a','e','i','o','u','y'};
 
 /**
- * Dwarf constructor.
+ * Goblin constructor.
  *
  * We are abandoning the setting of default variables via the colon method because that has issues with inheritance.
  * TODO Move this up to Humanoid or even Creature or hell, even Thing
  */
-Dwarf::Dwarf(string name,
+Goblin::Goblin(string name,
 		   int health,
 		   int mana,
 		   int accuracy,
@@ -73,7 +37,7 @@ Dwarf::Dwarf(string name,
 	if (name=="")
 	{
 		//TODO Do I need to specify the class, since it's in Humanoid?
-		this->name = Dwarf::generateName();
+		this->name = Goblin::generateName();
 	}
 	else
 	{
@@ -89,12 +53,12 @@ Dwarf::Dwarf(string name,
 };
 
 /**
- *	Dwarf destructor
+ *	Goblin destructor
  *
  *	C++ destructors take no parameters and have no return type. Not even void.
  *	Cannot be overloaded.
  */
-Dwarf::~Dwarf()
+Goblin::~Goblin()
 {
 	cout << "Aww, " << name << " died\n";
 }
@@ -113,29 +77,26 @@ Dwarf::~Dwarf()
  * Spellings of names alphabetically, and then vectors are sorted alphabetically based on sub-vectors first bucket.
  *
  * TODO: Force sex to lower case.
+ * TODO: Prevent name duplication.
  */
-string Dwarf::generateNameFirst(char sex) {
+string Goblin::generateNameFirst(char sex) {
     srand(time(0));
-    if (sex == 'm')
-    {
-        return MALE_NAMES[rand()%MALE_NAMES.size()];
-    }
-    else if (sex == 'f')
-    {
-        return FEMALE_NAMES[rand()%FEMALE_NAMES.size()];
-    }
-    else
-    {
-        return ANDROGYNOUS_NAMES[rand()%ANDROGYNOUS_NAMES.size()];
-    }
+	string name;
+    //Generate a capital consonant
+	name += toupper(CONSONANTS[rand()%TOTAL_CONSONANTS]);
+	//Concat with a lower case vowel, consonant, vowel, consonant
+	name += VOWELS[rand()%TOTAL_VOWELS];
+	name += CONSONANTS[rand()%TOTAL_CONSONANTS];
+	name += VOWELS[rand()%TOTAL_VOWELS];
+	return name + CONSONANTS[rand()%TOTAL_CONSONANTS];
 }
 /**
  * generateName helper method. Generates last name.
  *
  * Overrides virtual method in parent.
  */
-string Dwarf::generateNameLast() {
-    return FAMILY_NAMES1[rand()%FAMILY_NAMES1.size()] + FAMILY_NAMES2[rand()%FAMILY_NAMES2.size()];
+string Goblin::generateNameLast() {
+    return generateNameFirst('a');
 }
 
 //    vector<string> sub_first = first[rand()%first.size()];
