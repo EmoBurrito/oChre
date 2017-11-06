@@ -11,14 +11,14 @@ using namespace std;
  */
 class Goblin: public Humanoid {
 private:
-	//Internal methods
-	//TODO Move these methods to humanoid class that draw from vectors in the children
-	static string generateName(char sex='n');
-	static string generateNameFirst(char sex='n');
-	static string generateNameLast();
-	static string generateNameCompound();
+	const static vector<char> CONSONANTS;
+	const static vector<char> VOWELS;
+	const static int TOTAL_CONSONANTS = 21;
+	const static int TOTAL_VOWELS = 6;
 
 protected:
+	string generateNameFirst(char sex='a') override ;
+	string generateNameLast() override ;
 
 public:
 	//Default values go in function prototypes only
@@ -34,13 +34,6 @@ public:
 		int=10
 	); //Constructor - Bucky had a different constructor in 14
 	~Goblin();  //Destructor
-
-	string sayCatchPhrase()
-	{
-		return "Preaching to the choir";
-	}
-
-
 };
 
 #endif //GOBLIN_H

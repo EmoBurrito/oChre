@@ -1,6 +1,7 @@
 # Added for oChre
 .metadata
 .idea/
+bin/
 cmake-build-debug/
 doc/html/
 doc/latex/
@@ -34,6 +35,7 @@ src/CMakeLists.txt
 *.lib
 
 # Executables
+*.bin
 *.exe
 *.out
 *.app

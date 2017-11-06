@@ -1,3 +1,5 @@
+#include <cstdlib>
+#include <ctime>
 #include <string>
 #include "../include/creature.h"
 
@@ -46,3 +48,16 @@ int Creature::getHealth()
 {
     return health;
 };
+
+
+
+
+/**
+ * Returns a string of a randomly generated name.
+ *
+ * Used if a name is not supplied.
+ */
+string Humanoid::generateName(char sex)
+{
+    return generateNameFirst(sex) + " " + generateNameLast();
+}

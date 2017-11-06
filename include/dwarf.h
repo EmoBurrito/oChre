@@ -1,6 +1,7 @@
 #ifndef DWARF_H
 #define DWARF_H
 #include <string>
+#include <vector>
 #include "creature.h"
 
 using namespace std;
@@ -12,14 +13,15 @@ using namespace std;
  */
 class Dwarf: public Humanoid {
 private:
-	//Internal methods
-	//TODO Move these methods to humanoid class that draw from vectors in the children
-	static string generateName(char sex='n');
-	static string generateNameFirst(char sex='n');
-	static string generateNameLast();
-	static string generateNameCompound();
+	const static vector<string> MALE_NAMES; /**< A vector of male names */
+	const static vector<string> FEMALE_NAMES; /**< A vector of female names */
+	const static vector<string> ANDROGYNOUS_NAMES; /**< A vector of androgynous names */
+	const static vector<string> FAMILY_NAMES1; /**< A vector of starter family names. To be compounded with a closing family name. */
+	const static vector<string> FAMILY_NAMES2; /**< A vector of closing family names. To be compounded with a starter family name. */
 
 protected:
+	string generateNameFirst(char sex='a') override;
+	string generateNameLast() override;
 
 public:
 	//Default values go in function prototypes only
@@ -35,13 +37,6 @@ public:
 		int=10
 	); //Constructor - Bucky had a different constructor in 14
 	~Dwarf();  //Destructor
-
-	string sayCatchPhrase()
-	{
-		return "Preaching to the choir";
-	}
-
-
 };
 
 #endif //DWARF_H
