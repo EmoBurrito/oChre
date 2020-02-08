@@ -1,25 +1,19 @@
-#include <iostream>
-#include "../include/party.h"
+#include <string.h>
+#include "party.h"
 
-/**
- * Not sure if I want to instantiate then fill, or require characters to instantiate. Perhaps at least one?
- */
-Party::Party()
-{
-    for (int denomination = 0; denomination < sizeof(this->purse)/sizeof(this->purse[0]))
-    {
-        this->purse[denomination] = 0;
-    }
-//    this->purse[0] = 0;
-};
+Party::Party() {
 
-/**
- * TO BE IMPLEMENTED. Loots a target create.
- *
- * Creature must first be defeated.
- */
-void Party::loot(Creature target) {
-    //Check to see if creature has actually been defeated.
-    //If they have, get some gold, chance at an item drop, then free from memory.
-    //Look up "delete" command
+}
+
+std::string Party::iterate_members() {
+	//strings are not the same as char arrays. Strings can be concatenated with + but char arrays cannot
+	//However, char arrays can be concatenated to strings
+	std::string header = "----------------\n| Party Status |\n----------------\n";
+	std::string food_gold = "Food: " + std::to_string(this->food) + " | Gold: " + std::to_string(this->gold) + "\n";
+	//TODO After converting party members to an array, loop over the members
+	std::string first = this->member_first->get_name()
+		+ " | HP: " + std::to_string(this->member_first->get_health_current()) + "/" + std::to_string(this->member_first->get_health_max()) + " | "
+		+ "MP: " + std::to_string(this->member_first->get_mana_current()) + "/" + std::to_string(this->member_first->get_mana_max()) + "\n";
+
+	return header + food_gold + first;
 }

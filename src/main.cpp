@@ -1,88 +1,79 @@
-#include <iostream>
+#include <climits> // variable max and mins
+#include <cstdlib> //random number generation
+#include <iostream> //print and getting input
+#include <map> //dictionaries
 #include <string>
-#include "../include/party.h"
-#include "../include/human.h"
-#include "../include/dwarf.h"
-#include "../include/goblin.h"
-#include "../include/rat.h"
-#include "../include/equippable.h"
 
-using namespace std;
+#include "creature.h"
+#include "party.h"
 
-//Function prototypes - They are so the compiler knows ABOUT the function before use
-void sizeCheck();
+std::map<std::string, std::string> GREETING{
+	{"TEXT", "Hello World from C++!"},
+	{"SOUNDFILE", "null.ogg"}
+};
+
+//TODO Find a way to drop unused languages from memory
+//What if I returned the map itself and not the selection?
+std::map<std::string, std::string> ENGLISH{
+	{"GREETING", "Hello World from C++!"}
+};
+
+std::map<char, std::string> LANGUAGES{
+	{'e', "Hello World from C++!"},
+	{'f', "Bonjour le monde de C++!"},
+	{'s', "Hola Mundo desde C++!"}
+};
+
+char determine_language() {
+	std::string LANGUAGE_CHOICES [] = {"English", "Francais", "Espanol"};
+	char language_selection = 'e';
+	bool language_selection_valid = false;
+	do{
+		std::cout << "Language:\n";
+		for(unsigned char i = 0; i < sizeof(LANGUAGE_CHOICES)/sizeof(LANGUAGE_CHOICES[0]); i++)
+		{
+			std::cout << i+1 << ": " << LANGUAGE_CHOICES[i] << "\n";
+		}
+		// TODO Prompt user for language
+		language_selection = 'e';
+		language_selection_valid = true;
+	}while(!language_selection_valid);
+	std::cout << "Your language is " << language_selection << "\n";
+	return language_selection;
+	//TODO Check if config file exists
+	//TRUE: Read config
+	//False: Prompt for language
+};
 
 int main()
 {
-	//Opening
-	cout << "================================\n";
-	cout << "= WELCOME TO OCHREWOOD TRIBUTE =\n";
-	cout << "================================\n";
-	sizeCheck();
-	cout << "\n";
-
-    Party myParty();
-	cout << "What shall be the champion's name?\n>";
-	string humanName; //Declare the name variable
-	cin >> humanName; //Prompt user for name, which is then stored in the variable. Doesn't seem to take empty string?
-	//TODO Allow user to enter spaces. Look into getLine()
-
-	//Make sure the user gave us a name. Doesn't seem to even take empty string, so this isn't necessary
-	// while (humanName.length() == 0) {
-	// 	cout << "Give us something to work with here, buddy\n";
-	// 	cin >> humanName; //Make them try again
-	// }
-
-	Human my_protagonist(humanName, 15, 12); //Makes new human with our input name
-	Human my_antagonist("", 12, 6); //Let's make someone to fight
-    Dwarf my_dwarf("", 15, 9); //And someone a different race
-	Goblin my_goblin("", 5, 6);
-
-	cout << "Our human's name is " << my_protagonist.getName() << " with " << my_protagonist.getHealth() << " health.\n";
-
-    Rat rat;
-    cout << "Oh, gross! A " << rat.getName() << "! Get it!!\n";
-//    delete rat;  //Not only does this not work, I don't think it's the best way to go about this
-//    while (rat.getHealth() > 0) {
-//		my_protagonist.attack(&rat);
-//	}
-	Rat *rat_pointer = &rat;
-	rat_pointer = NULL;
-
-    GiantRat giantRat;
-    cout << "Jeez, look at that " << giantRat.getName() << "! They sure grow large around here...\n";
-    //TODO Wail on it 'til it dies too.
-
-	cout << my_antagonist.getName() << ", " << my_dwarf.getName() << " and " << my_goblin.getName() << " don't like " << my_protagonist.getName() << ".\n";
-	cout << my_antagonist.getName() << "'s strength is " <<  my_antagonist.getStrength() << ".\n";
-	my_antagonist.attack(&my_protagonist); //Pass the address, essentially creating a pointer. Look out, Todd!
-	//my_protagonist.ouch(12); //TODO shouldn't need to do this, the attack should do it on it's own
-	cout << my_protagonist.getName() << " has " << my_protagonist.getHealth() << " health remaining. Poor " << my_protagonist.getName() << ".\n";
-	cout << my_antagonist.getName() << " has " << my_antagonist.getHealth() << " health remaining. Poor " << my_antagonist.getName() << ".\n";
-	//cout << "Test of toString: " << *my_protagonist
-
-	//Messing around with items
-	Hand myItem("sword");
-	cout << "Hey, look! A " << myItem.getName() << "! Get 'em, " << my_protagonist.getName() << "!\n";
-	//Equip the sword, which should modify the attack values
-	my_protagonist.attack(&my_antagonist);
-}
-
-void sizeCheck()
-{
-	cout << "Memory sizes in bytes:\n";
-	cout << "Party: " << sizeof(Party) << "\n";
-	cout << "Human: " << sizeof(Human) << "\n";
-    //cout << "Consumable: " << sizeof(Consumable) << "\n";
-    cout << "Equippable: " << sizeof(Hand) << "\n";
-}
-
-//::tuna like super? E29
-
-void printParty()
-{
-    // TODO Move this to Party
-    cout << "===";
-    cout << "TIME | Money | Food";  //TODO Replace time with an actual timestamp
-    cout << "===";
+	//char language_selection = determine_language();
+	//std::cout << LANGUAGES[language_selection] << "\n";
+	//std::cout << ENGLISH["GREETING"] << "\n";
+	//std::cout << GREETING["TEXT"] << "\n";
+	//std::cout << GREETING["SOUNDFILE"] << "\n";
+	std::cout << "=================\noChrewood Tribute\n=================\n";
+	std::cout << "Creating default creature...\n";
+	Creature first;  //No bracket invoke because no arguments passed. Compiler confuses with declaring function, like in a header file.
+	std::cout << "Creating creature named Terrance...\n";
+	Creature second("Terrance");
+	std::cout << "Welcome, " << first.get_name() << " and " << second.get_name() << "\n";
+	Party my_party;
+	my_party.member_first = &first;
+	std::cout << my_party.iterate_members();
+	Creature peasant("Peasant");
+	std::cout << "Oh, look. A peasant. " << peasant.get_name() << " relationship: " << (int)peasant.get_relationship() << "\n";
+	std::cout << "He appears non-hostile. Let's see what he has to say.\n";
+	std::cout << peasant.talk() << "\n";
+	std::cout << "Haha, you keep on, keepin' on. The peasant likes that you enjoyed his banter.\n";
+	std::cout << peasant.get_name() << " relationship: " << (int)peasant.change_relationship(10) << "\n";
+	std::cout << peasant.talk() << "\n";
+	std::cout << "You give him a pity laugh at best. The peasant appears bothered.\n";
+	std::cout << peasant.get_name() << " relationship: " << (int)peasant.change_relationship(-20) << "\n";
+	std::cout << peasant.talk() << "\n";
+	std::cout << "... What?\n";
+	std::cout << peasant.get_name() << " relationship: " << (int)peasant.change_relationship(CHAR_MAX) << "\n";
+	std::cout << peasant.talk() << "\n";
+	std::cout << "This is getting out of hand. Better cave his skull in.\n";
+	std::cout << peasant.get_name() << " relationship: " << (int)peasant.change_relationship(CHAR_MIN) << "\n";
 }
