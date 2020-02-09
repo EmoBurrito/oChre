@@ -15,12 +15,7 @@ class Party {
 		// Party(Creature *starting_member);
 
 		//TODO Convert to private array, using add/remove functions
-		Creature * member_first;
-		Creature * member_second;
-		Creature * member_third;
-		Creature * member_fourth;
-		Creature * member_fifth;
-		Creature * member_sixth;
+		Creature * members[MEMBERS_MAX] = {NULL, NULL, NULL, NULL, NULL, NULL};
 
 		std::string iterate_members();
 

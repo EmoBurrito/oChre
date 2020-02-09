@@ -53,13 +53,11 @@ int main()
 	//std::cout << GREETING["TEXT"] << "\n";
 	//std::cout << GREETING["SOUNDFILE"] << "\n";
 	std::cout << "=================\noChrewood Tribute\n=================\n";
-	std::cout << "Creating default creature...\n";
 	Creature first;  //No bracket invoke because no arguments passed. Compiler confuses with declaring function, like in a header file.
-	std::cout << "Creating creature named Terrance...\n";
 	Creature second("Terrance");
-	std::cout << "Welcome, " << first.get_name() << " and " << second.get_name() << "\n";
 	Party my_party;
-	my_party.member_first = &first;
+	my_party.members[0] = &first;
+	my_party.members[1] = &second;
 	std::cout << my_party.iterate_members();
 	Creature peasant("Peasant");
 	std::cout << "Oh, look. A peasant. " << peasant.get_name() << " relationship: " << (int)peasant.get_relationship() << "\n";
