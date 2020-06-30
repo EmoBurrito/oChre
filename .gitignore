@@ -8,6 +8,7 @@ doc/latex/
 src/.idea
 src/cmake-build-debug
 src/CMakeLists.txt
+src/tests/catch.hpp
 
 # Compiled Object files
 *.slo

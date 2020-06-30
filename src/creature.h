@@ -28,6 +28,7 @@ class Creature {
 		short int get_mana_current();
 		short int get_mana_max();
 		
+		void attack(short int attack, short int damage);
 		std::string get_name();
 		char get_relationship();
 		char change_relationship(char adjustment);

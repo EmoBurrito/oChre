@@ -3,7 +3,7 @@
 #include "creature.h"
 
 Creature::Creature() {
-	this->name = "Dave";
+	this->name = "Creature";
 }
 	
 Creature::Creature(std::string name_arg) {
@@ -55,8 +55,17 @@ char Creature::change_relationship(char adjustment) {
 	}
 	return relationship;
 }
-	
-void Creature::attack() {
+
+/* Attacks this creature.
+   @param attack The attack roll, comes from the attacker. If equal to or greater than target's armour class, the attack succeeds and does damage.
+   @param damage The amount of damage the target takes, if the attack is equal to or greather than target's armour class.
+ */
+void Creature::attack(short int attack, short int damage) {
+	// TODO Add attack roll
+	if (true) {
+		// TODO Add an attack type for resistances
+		this->health_current = this->health_current - damage;
+	}
 }
 	
 std::string Creature::talk() {

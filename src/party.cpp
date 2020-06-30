@@ -23,3 +23,13 @@ std::string Party::iterate_members() {
 
 	return to_return;
 }
+
+// TODO Check for min/max before adjustment
+unsigned short int Party::adjust_food(short int adjustment) {
+	this->food = this->food + adjustment;
+	return this->food;
+};
+unsigned int Party::adjust_gold(int adjustment) {
+	this->gold = this->gold + adjustment;
+	return this->gold;
+};
