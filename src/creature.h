@@ -16,10 +16,11 @@ class Creature {
 		short int mana_current = 0;
 		short int mana_max = 0;
 		
-		const char RELATIONSHIP_MIN = 0;
-		const char RELATIONSHIP_MAX = 100;
 		char relationship = 50;
 	public:
+		const char RELATIONSHIP_MIN = 0;
+		const char RELATIONSHIP_MAX = 100;
+
 		Creature();
 		Creature(std::string);
 		
