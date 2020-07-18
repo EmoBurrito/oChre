@@ -1,15 +1,14 @@
 #include <string>
-
 #include "creature.h"
 
 Creature::Creature() {
 	this->name = "Creature";
 }
-	
-Creature::Creature(std::string name_arg) {
-	this->name = name_arg;
+
+Creature::Creature(std::string name) {
+	this->name = name;
 }
-	
+
 std::string Creature::get_name() {
 	return this->name;
 }
@@ -33,33 +32,15 @@ char Creature::get_relationship() {
 	
 // Takes either positive or negative number and adds to relationship
 char Creature::change_relationship(char adjustment) {
-	//Reducing relationship
-	if (adjustment < 0) {
-		// If the adjustment would reduce below 0, set to 0 instead
-		if (adjustment + relationship < RELATIONSHIP_MIN) {
-			relationship = RELATIONSHIP_MIN;
-		}
-		else {
-			relationship = adjustment + relationship;
-		}
-	}
-	//Improving relationship
-	else {
-		// If the adjustment would improve relationship past 100, set to 100 instead
-		if (adjustment + relationship > RELATIONSHIP_MAX) {
-			relationship = RELATIONSHIP_MAX;
-		}
-		else {
-			relationship = adjustment + relationship;
-		}
-	}
+	// If the adjustment would reduce below min, set to min instead
+	if (adjustment < 0 && adjustment + relationship < RELATIONSHIP_MIN) {relationship = RELATIONSHIP_MIN;}
+	// If the adjustment would improve relationship past max, set to max instead
+	else if (adjustment > 0 && adjustment + relationship > RELATIONSHIP_MAX) {relationship = RELATIONSHIP_MAX;}
+	// Otherwise, simply make the adjustment
+	else {relationship = adjustment + relationship;}
 	return relationship;
 }
 
-/* Attacks this creature.
-   @param attack The attack roll, comes from the attacker. If equal to or greater than target's armour class, the attack succeeds and does damage.
-   @param damage The amount of damage the target takes, if the attack is equal to or greather than target's armour class.
- */
 void Creature::attack(short int attack, short int damage) {
 	// TODO Add attack roll
 	if (true) {
@@ -87,3 +68,12 @@ std::string Creature::talk() {
 	};
 	return sayings[rand() % sizeof(sayings)/sizeof(*sayings)];
 };
+
+// TODO Generate names
+Human::Human() {
+	this->name = "Human";
+}
+
+Goblin::Goblin() {
+	this->name = "Goblin";
+}

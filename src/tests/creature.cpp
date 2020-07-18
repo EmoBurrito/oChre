@@ -5,8 +5,8 @@
 
 SCENARIO("Creatures can be instantiated", "[creature]") {
 	GIVEN("Two creatures") {
-		Creature my_creature;  //No bracket invoke because no arguments passed. Compiler confuses with declaring function, like in a header file.
-		Creature dummy("Test Dummy");
+		Human tester;
+		Human dummy("Test Dummy");
 
 		WHEN("we offend someone") {
 			THEN("they get offended.") {
