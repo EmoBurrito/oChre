@@ -13,39 +13,26 @@ std::string Creature::get_name() {
 	return this->name;
 }
 
-short int Creature::get_health_current(){
-	return this->health_current;
+short int Creature::get_stat(char stat, bool is_permanent){
+	return this->stats[stat][is_permanent];
 };
-short int Creature::get_health_max(){
-	return this->health_max;
-};
-short int Creature::get_mana_current(){
-	return this->mana_current;
-};
-short int Creature::get_mana_max(){
-	return this->mana_max;
-};
-	
-char Creature::get_relationship() {
-	return this->relationship;
-}
-	
+
 // Takes either positive or negative number and adds to relationship
 char Creature::change_relationship(char adjustment) {
 	// If the adjustment would reduce below min, set to min instead
-	if (adjustment < 0 && adjustment + relationship < RELATIONSHIP_MIN) {relationship = RELATIONSHIP_MIN;}
+	if (adjustment < 0 && adjustment + stats[RELATIONSHIP][TEMPORARY] < RELATIONSHIP_MIN) {stats[RELATIONSHIP][TEMPORARY] = RELATIONSHIP_MIN;}
 	// If the adjustment would improve relationship past max, set to max instead
-	else if (adjustment > 0 && adjustment + relationship > RELATIONSHIP_MAX) {relationship = RELATIONSHIP_MAX;}
+	else if (adjustment > 0 && adjustment + stats[RELATIONSHIP][TEMPORARY] > RELATIONSHIP_MAX) {stats[RELATIONSHIP][TEMPORARY] = RELATIONSHIP_MAX;}
 	// Otherwise, simply make the adjustment
-	else {relationship = adjustment + relationship;}
-	return relationship;
+	else {stats[RELATIONSHIP][TEMPORARY] = adjustment + stats[RELATIONSHIP][TEMPORARY];}
+	return stats[RELATIONSHIP][TEMPORARY];
 }
 
 void Creature::attack(short int attack, short int damage) {
 	// TODO Add attack roll
 	if (true) {
 		// TODO Add an attack type for resistances
-		this->health_current = this->health_current - damage;
+		this->stats[HEALTH][TEMPORARY] = this->stats[HEALTH][TEMPORARY] - damage;
 	}
 }
 	

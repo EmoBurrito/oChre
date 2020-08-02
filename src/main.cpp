@@ -22,9 +22,9 @@ int main()
 	std::cout << my_party.iterate_members();
 
 	Human peasant("Peasant");
-	std::cout << "Starting fight. Peasant health: " << peasant.get_health_current() << "\n";
-	while (peasant.get_health_current() > 0) {
-		std::cout << "Peasant health: " << peasant.get_health_current() << "\n";
+	std::cout << "Starting fight. Peasant health: " << peasant.get_stat(peasant.HEALTH, peasant.TEMPORARY) << "\n";
+	while (peasant.get_stat(peasant.HEALTH, peasant.TEMPORARY) > 0) {
+		std::cout << "Peasant health: " << peasant.get_stat(peasant.HEALTH, peasant.TEMPORARY) << "\n";
 		peasant.attack(2, 2);
 	}
 }

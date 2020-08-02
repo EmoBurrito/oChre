@@ -13,8 +13,8 @@ std::string Party::iterate_members() {
 	for (Creature * current_member : this->members){
 		if (current_member != NULL) {
 			to_return += current_member->get_name()
-				+ " | HP: " + std::to_string(current_member->get_health_current()) + "/" + std::to_string(current_member->get_health_max()) + " | "
-				+ "MP: " + std::to_string(current_member->get_mana_current()) + "/" + std::to_string(current_member->get_mana_max()) + "\n";
+				+ " | HP: " + std::to_string(current_member->get_stat(current_member->HEALTH, current_member->TEMPORARY)) + "/" + std::to_string(current_member->get_stat(current_member->HEALTH, current_member->PERMANENT)) + " | "
+				+ "MP: " + std::to_string(current_member->get_stat(current_member->MANA, current_member->TEMPORARY)) + "/" + std::to_string(current_member->get_stat(current_member->MANA, current_member->TEMPORARY)) + "\n";
 		}
 		else {
 			to_return += "---\n";
