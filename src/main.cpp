@@ -1,4 +1,3 @@
-#include <cstdlib> //random number generation
 #include <iostream> //print and getting input
 #include <map> //dictionaries
 #include <string>
@@ -21,10 +20,11 @@ int main()
 	my_party.members[3] = &goblin2;
 	std::cout << my_party.iterate_members();
 
+    //Boost strength by 5
+    my_party.members[0]->change_statistic(my_party.members[0]->STRENGTH, my_party.members[0]->TEMPORARY, 5);
+
+    std::cout << "" << my_party.members[0]->get_name() << "'s strength: " << my_party.members[0]->get_statistic(my_party.members[0]->STRENGTH, my_party.members[0]->TEMPORARY) << "\n";
+
 	Human peasant("Peasant");
-	std::cout << "Starting fight. Peasant health: " << peasant.get_stat(peasant.HEALTH, peasant.TEMPORARY) << "\n";
-	while (peasant.get_stat(peasant.HEALTH, peasant.TEMPORARY) > 0) {
-		std::cout << "Peasant health: " << peasant.get_stat(peasant.HEALTH, peasant.TEMPORARY) << "\n";
-		peasant.attack(2, 2);
-	}
+	std::cout << "Starting fight. Peasant health: " << peasant.get_statistic(peasant.HEALTH, peasant.TEMPORARY) << "\n";
 }

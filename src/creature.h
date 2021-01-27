@@ -2,6 +2,7 @@
 #define CREATURE
 
 #include <climits>
+#include <random>
 #include <string>
 
 /** Parent class to playable races. TODO Make abstract.
@@ -32,36 +33,38 @@ class Creature {
 			{10, 10}
 		};
 
+        std::random_device rng_seed; /**< Seed for random number generators. TODO Make static? */
+
 	public:
 		/** Constructor
 
 			@param name Creature's name
 		*/
 		Creature(std::string name);
-		// TODO Should these be static?
-		const char HEALTH = 0; /**< Health stat array offset. */
-		const char MANA = 1; /**< Mana stat array offset. */
-		const char  RELATIONSHIP = 2; /**< Relationship stat array offset. */
-		const char  DEXTERITY = 3; /**< Dexterity stat array offset. */
-		const char  STRENGTH = 4; /**< Strength stat array offset. */
-		const char  SPEED = 5; /**< Speed stat array offset. */
-		const char  CONSTITUTION = 6; /**< Constitution stat array offset. */
-		const char  CHARISMA = 7; /**< Charisma stat array offset. */
-		const char  LUCK = 8; /**< Luck stat array offset. */
+		const static char HEALTH; /**< Health stat array offset. */
+		const static char MANA; /**< Mana stat array offset. */
+		const static char  RELATIONSHIP; /**< Relationship stat array offset. */
+		const static char  DEXTERITY; /**< Dexterity stat array offset. */
+		const static char  STRENGTH; /**< Strength stat array offset. */
+		const static char  SPEED; /**< Speed stat array offset. */
+		const static char  CONSTITUTION; /**< Constitution stat array offset. */
+		const static char  CHARISMA; /**< Charisma stat array offset. */
+		const static char  LUCK; /**< Luck stat array offset. */
 
-		const bool TEMPORARY = 0; /**< Current stat value, such as if someone has lost some health or spent some mana. */
-		const bool PERMANENT = 1; /**< Value of an otherwise healthy creature. It is not a ceiling as it can be exceeded with boons. */
+		const static bool TEMPORARY; /**< Current stat value, such as if someone has lost some health or spent some mana. */
+		const static bool PERMANENT; /**< Value of an otherwise healthy creature. It is not a ceiling as it can be exceeded with boons. */
 
-		const short int STATS_MIN = SHRT_MIN; /**< Stat floor. */
-		const char RELATIONSHIP_MIN = 0; /**< Relationship floor. Creature will attack player on sight. */
-		const char RELATIONSHIP_MAX = 100; /**< Relationship ceiling. Complete adoration. */
+		const static short int STATISTIC_MIN; /**< Stat floor. */
+		const static short int STATISTIC_MAX; /**< Stat ceiling. */
+		const static char RELATIONSHIP_MIN; /**< Relationship floor. Creature will attack player on sight. */
+		const static char RELATIONSHIP_MAX; /**< Relationship ceiling. Complete adoration. */
 		
 		/** Returns a stat.
 
 			@param stat The stat to return. Use the defined constants.
 			@param is_permanent Whether you want the temporary or permanent value.
 		*/
-		short int get_stat(char stat, bool is_permanent);
+		short int get_statistic(char statistic, bool is_permanent);
 
 		/** Attacks this creature.
 
@@ -76,8 +79,11 @@ class Creature {
 
 			@param adjustment The amount that the relationship improves or deteriorates. Set 0 to check current relationship.
 		*/
+        short int change_statistic(char statistic, bool is_permanent, short int adjustment);
 		char change_relationship(char adjustment);
 		std::string talk(); /**< Talks to creature. */
+
+        float get_luck();
 };
 
 #endif
