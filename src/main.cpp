@@ -2,8 +2,8 @@
 #include <map> //dictionaries
 #include <string>
 
-#include "creature.h"
-#include "party.h"
+#include "creature.hpp"
+#include "party.hpp"
 
 int main()
 {
@@ -14,10 +14,10 @@ int main()
 	Goblin goblin2("Klurr");
 
 	Party my_party;
-	my_party.members[0] = &human1;
-	my_party.members[1] = &human2;
-	my_party.members[2] = &goblin1;
-	my_party.members[3] = &goblin2;
+	my_party.add_member(&human1);
+	my_party.add_member(&human2);
+	my_party.add_member(&goblin1, 3);
+	my_party.add_member(&goblin2, 2);
 	std::cout << my_party.iterate_members();
 
     //Boost strength by 5

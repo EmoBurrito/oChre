@@ -1,8 +1,44 @@
 #include <string.h>
-#include "party.h"
+#include "party.hpp"
 
 Party::Party() {
 
+}
+
+Creature * Party::add_member(Creature * new_member) {
+	bool empty_slot_found = false;
+	unsigned char free_slot;
+	for (free_slot = 0; free_slot < this->MEMBERS_MAX; free_slot++) {
+		if (this->members[free_slot] == NULL) {
+			empty_slot_found = true;
+			break;
+		}
+	}
+	//TODO Raise an error if no slot found?
+	if (empty_slot_found) {
+		return this->add_member(new_member, free_slot);
+	}
+	else {
+		return NULL;
+	}
+}
+
+Creature * Party::add_member(Creature * new_member, unsigned char slot) {
+	Creature * previous_member = this->members[slot];
+	this->members[slot] = new_member;
+	return previous_member;
+}
+
+Creature * Party::remove_member(unsigned char slot) {
+	Creature * to_return = this->members[slot];
+	this->members[slot] = NULL;
+	return to_return;
+}
+
+void Party::swap_members(unsigned char member_first, unsigned char member_second) {
+	Creature * temp = this->members[member_first];
+	this->members[member_first] = this->members[member_second];
+	this->members[member_second] = temp;
 }
 
 std::string Party::iterate_members() {

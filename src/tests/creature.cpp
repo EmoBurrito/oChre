@@ -1,7 +1,7 @@
 #include <climits> // variable max and mins
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
-#include "../creature.h"
+#include "../creature.hpp"
 #include <iostream> //print and getting input
 SCENARIO("Creatures can be instantiated", "[creature]") {
 	GIVEN("Two creatures") {

@@ -33,7 +33,7 @@ class Creature {
 			{10, 10}
 		};
 
-        std::random_device rng_seed; /**< Seed for random number generators. TODO Make static? */
+		std::random_device rng_seed; /**< Seed for random number generators. TODO Make static? */
 
 	public:
 		/** Constructor
@@ -79,11 +79,11 @@ class Creature {
 
 			@param adjustment The amount that the relationship improves or deteriorates. Set 0 to check current relationship.
 		*/
-        short int change_statistic(char statistic, bool is_permanent, short int adjustment);
+		short int change_statistic(char statistic, bool is_permanent, short int adjustment);
 		char change_relationship(char adjustment);
 		std::string talk(); /**< Talks to creature. */
 
-        float get_luck();
+		float get_luck();
 };
 
 #endif

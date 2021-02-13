@@ -1,5 +1,5 @@
 #include <string>
-#include "creature.h"
+#include "creature.hpp"
 
 // I don't understand why static variables need to be declared in .hpp
 // and defined here with the "Creature::" and no "static" keyword
