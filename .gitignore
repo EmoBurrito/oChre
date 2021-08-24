@@ -3,8 +3,10 @@
 .idea/
 bin/
 cmake-build-debug/
+*.deb
 doc/html/
 doc/latex/
+ochre_*_
 src/.idea
 src/cmake-build-debug
 src/CMakeLists.txt
