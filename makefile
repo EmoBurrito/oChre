@@ -1,19 +1,15 @@
 CC=g++
 LINK=$(CC)
 
-PLATFORM=linux  # Change this to your platform. TODO Auto-dectect.
-ifeq "$(PLATFORM)" "linux"
-	extension=""
-	purge=rm
-	static_lib=""
-else ifeq "$(PLATFORM)" "windows"
+ifeq ($(OS),Windows_NT)
 	extension=.exe
 	purge=del
-	static_lib="-static-libgcc -static-libstdc++"
+else
+	purge=rm
 endif
 
 exec_main: creature party main
-	$(CC) -o bin/oChre$(extension) bin/main.o bin/party.o bin/creature.o $(static_lib)
+	$(CC) -o bin/oChre$(extension) bin/main.o bin/party.o bin/creature.o -static-libgcc -static-libstdc++
 exec_tests:  test_creature test_party
 	$(CC) -o bin/tests$(extension) bin/creature.o bin/tests_creature.o bin/party.o bin/tests_party.o
 
