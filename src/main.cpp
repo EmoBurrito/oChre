@@ -7,7 +7,10 @@
 
 int main()
 {
-	std::cout << "=================\noChrewood Tribute\n=================\n";
+	std::string banner = "Ochrewood Tribute";
+	std::string banner_header = std::string(banner.length()+4, '=') + '\n';
+	std::cout << banner_header << "| " << banner << " |\n" << banner_header;
+
 	Human human1;
 	Human human2("Todd");
 	Goblin goblin1;

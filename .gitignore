@@ -1,6 +1,7 @@
 # Added for oChre
-.metadata
 .idea/
+.metadata
+.vscode
 bin/
 cmake-build-debug/
 *.deb
