@@ -1,0 +1,29 @@
+#ifndef PROJECT_VERSION
+	#define PROJECT_VERSION  "@PROJECT_VERSION@"
+#endif
+
+#if _WIN32 || _WIN64
+	#define PROJECT_PLATFORM "Windows"
+	#if _WIN64
+		#define PROJECT_ARCH "x86_64"
+	#elif _WIN32
+		#define PROJECT_ARCH "i386"
+	#endif
+#elif __GNUC__
+	#define PROJECT_PLATFORM "Linux"
+	#if __x86_64__
+		#define PROJECT_ARCH "x86_64"
+	#elif __aarch64__
+		#define PROJECT_ARCH "aarch64"
+	#endif
+#endif
+
+#ifndef PROJECT_VERSION
+	#define PROJECT_VERSION "UNKNOWN"
+#endif
+#ifndef PROJECT_PLATFORM
+	#define PROJECT_PLATFORM "UNKNOWN"
+#endif
+#ifndef PROJECT_ARCH
+	#define PROJECT_ARCH "UNKNOWN"
+#endif

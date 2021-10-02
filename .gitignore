@@ -1,17 +1,29 @@
 # Added for oChre
-.idea/
-.metadata
-.vscode
-bin/
-cmake-build-debug/
-*.deb
 doc/html/
 doc/latex/
-ochre_*_
-src/.idea
+src/config.h
+src/tests/catch.hpp
+
+#CMake, compilation, packaging
+*.deb
+*.rpm
+*vcxproj*
+bin/
+build/
+cmake-build-debug/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Ochre.sln
 src/cmake-build-debug
 src/CMakeLists.txt
-src/tests/catch.hpp
+
+#IDE related
+.idea/
+.vs/
+.vscode/
+ochre.dir/
+x64/
 
 # Compiled Object files
 *.slo

@@ -9,6 +9,23 @@ in the sense that the player assumes control of a party of characters that all t
 [personal space issues](https://youtu.be/vQs1uTTjTAM?t=76). Characters may be removed/added to the party, but the party must travel as one entity.
 The player controls a party of 1-6 characters that may be added to/removed from the party at specific locations.
 
+## Installation
+### Compile from Source
+#### Linux
+1. Install [CMake](https://cmake.org/download/) from the website, or check your repository for the package
+2. In the Ochre directory, `cmake . && make`
+
+#### Windows
+1. Install [CMake](https://cmake.org/download/) from the website
+2. Install [Visual Studio or Visual Studio Community with C++](https://visualstudio.microsoft.com/vs/features/cplusplus/), not Visual Studio Code
+3. In the Ochre directory, `cmake .`
+4. Open the `Ochre.sln` file that CMake generates in Visual Studio
+5. Build in release mode
+
+### Packages
+Installing from [package](https://github.com/EmoBurrito?tab=packages&repo_name=oChre) is much simpler and easier
+but will likely be a few versions behind HEAD.
+
 ## Documentation
 1. Install [Doxygen](https://www.doxygen.nl/download.html). It might even be in your distro's repo.
 2. Install graphviz, for dot functionality
